@@ -1,0 +1,139 @@
+/* General */
+
+/* Lista del perfil */
+.liPerfil {
+  list-style: none;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Tarjeta de perfil */
+.PerfilItem {
+  border: 1px solid #b3e5c6;
+  border-radius: 5px;
+  border: 9px;
+  border-style: ridge;
+  border-color: rgb(5, 120, 89) ;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 100, 80, 0.903);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0a7061fc;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.PerfilItem:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.905);
+
+}
+
+/* Imagen de perfil */
+.perfilIMG {
+  border-radius: 50%;
+  border: 3px solid  #026b56;
+  margin-top: 10px;
+  object-fit: cover;
+  width: 120px;
+  height: 120px;
+   box-shadow:  0 4px 14px rgba(1, 62, 39, 0.934);
+}
+
+/* Botones */
+.btnPerfilEdit,
+.btnConfirmar {
+  background-color: #bac0bd; /* verde menta tecnológica */
+  color: rgb(63, 74, 69);
+  font-weight: bold;
+  border: none;
+  padding: 10px 16px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btnPerfilEdit:hover,
+.btnConfirmar:hover {
+  background-color: #6ecf9a;
+}
+
+/* Inputs */
+.inptCardPerfil {
+  width: 95%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #c4e8db;
+  border-radius: 6px;
+  background-color: #bae2de;
+  color: #1f3a36;
+  font-size: 14px;
+}
+
+/* Etiquetas destacadas */
+strong {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .PerfilItem {
+    padding: 20px;
+  }
+
+  .perfilIMG {
+    width: 90px;
+    height: 90px;
+  }
+
+  .inptCardPerfil {
+    width: 100%;
+  }
+}
+.containerData{
+  margin: 15px;
+  margin-left: 3px;
+  color: #a7dfb9;
+}
+
+.containerData ul {
+  padding-left: 20px;
+  margin: 5px 0;
+  
+}
+
+.containerData li {
+  list-style-type: disc;
+  margin-bottom: 4px;
+  color: #2e3c3a;
+}
+
+.linkCalificacion{
+color:  #e7ea8b;
+font-family:  fantasy;
+
+
+}
+
+.liCalificaiones{
+
+    display: inline-block;
+    margin: 3px;
+    padding: 5px;
+  background-color: rgb(2, 68, 42);
+border-radius: 4px;
+
+   list-style: none;
+    
+}
+
+.btnVerCalificacion{
+border-radius: 4px;
+background-color: #828886;
+border-style: ridge;
+border-color: rgba(227, 212, 212, 0.853);
+color: rgb(255, 255, 255);
+}

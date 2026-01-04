@@ -1,0 +1,31 @@
+/* LineBar.css */
+.grafico-container {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+.grafico-container:hover{
+    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.247);
+}
+
+.grafico-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.grafico-header h5 {
+  font-size: 22px;
+  color: #0d6e63;
+}
+
+.grafico-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+

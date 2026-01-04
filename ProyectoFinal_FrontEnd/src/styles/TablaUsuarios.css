@@ -1,0 +1,49 @@
+.containerTablaUsuarios {
+    background-color: #999999;
+}
+
+.tablaUsuariosDeleteBtn {
+    border: none;
+}
+.tablaUsuariosDeleteBtn:hover {
+    background-color: #494949;
+    color: whitesmoke;
+}
+
+.tablaUsuariosEditBtn {
+    border: none;
+    margin-left: 10px;
+}
+.tablaUsuariosEditBtn:hover {
+    background-color: #494949;
+    color: whitesmoke;
+}
+
+.tablaUsuariosConfirmBtn {
+    border: none;
+}
+.tablaUsuariosConfirmBtn:hover {
+    background-color: #494949;
+    color: whitesmoke;
+}
+
+.inputTablaUsuarios {
+    border: 2px solid;
+}
+
+.inputTablaUsuarios:hover {
+    background-color: rgb(225, 223, 223);
+}
+
+@media (max-width: 768px) {
+    .containerTablaUsuarios {
+        width: 100%;
+        padding: 10px;
+    }
+    .tablaUsuariosDeleteBtn,
+    .tablaUsuariosEditBtn,
+    .tablaUsuariosConfirmBtn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

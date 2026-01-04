@@ -1,0 +1,75 @@
+/* Botón menú */
+button.me-2 {
+  background-color: rgba(29, 133, 81, 0.712);
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+  border: none;
+  
+  padding: 7px 20px;
+  transition: background-color 0.3s ease;
+  margin-left: 25px;
+  transition: background-color 0.3s ease, transform 0.2s;
+
+  margin-bottom: 20px;
+}
+
+button.me-2:hover {
+ background-color: #96c5bb; 
+  color: #095337c6;
+  box-shadow: inset  0 4px 12px rgba(20, 153, 109, 0.59);
+    transform: translateY(3px);
+}
+
+/* Panel lateral */
+.offcanvas {
+  background-color: #e6f3eb ;
+  border-left: 4px groove #81c29f;
+}
+
+/* Encabezado */
+.offcanvas-header {
+  background-color: #b9e2cb;
+  border-bottom: 1px solid #aad5bc;
+}
+
+.offcanvas-title {
+  font-weight: bold;
+  color: #0b3d2e;
+}
+
+/* Navegación */
+.navPadre{
+  background-color: #d8f6e3;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navHijo {
+  background-color: #08715c;
+  color: #e2ede9;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-weight: 500;
+}
+
+.navHijo:hover {
+  background-color: #8be4c5;
+  transform: translateX(5px);
+  color: #125b45;
+  text-decoration: none;
+}
+
+/* Cuerpo del Offcanvas */
+.offcanvas-body {
+  background-color: #f0f0f0;
+  color: #2d4839;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  border-top: 1px solid #c9d9cd;
+}

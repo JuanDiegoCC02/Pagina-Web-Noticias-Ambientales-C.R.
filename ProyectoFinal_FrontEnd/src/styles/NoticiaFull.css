@@ -1,0 +1,245 @@
+.comentariosContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.comentarioCard {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.comentarioUsuario {
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.comentarioContenido {
+  color: #555;
+}
+
+.noticiasFullBtnEliminar {
+    background-color: rgb(94, 144, 94);
+    padding: 2px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 5.5px;
+} .noticiasFullBtnEliminar:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+.noticiasFullBtnRespuesta {
+  background-color: rgb(143, 188, 156);
+  border: none;
+  border-radius: 4px;
+  padding: 2px 5px;
+  margin-left: 5px;
+} .noticiasFullBtnRespuesta:hover {
+  background-color: rgb(106, 156, 112);
+  color: white;
+}
+
+.noticiasFullBtnEdit {
+  background-color: rgb(106, 156, 112);
+  border: none;
+  border-radius: 4px;
+  padding: 2px 10px;
+  margin-left: 5px;
+} .noticiasFullBtnEdit:hover {
+  background-color: rgb(143, 188, 156);
+  color: white;
+}
+
+.respuestasContainer {
+  background-color: #f3eee1;
+  padding: 10px;
+  border-radius: 4px;
+  color: navy;
+}
+
+.btnRespuestaEliminar {
+  background-color: rosybrown;
+  color: whitesmoke;
+
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  padding: 2px;
+} .btnRespuestaEliminar:hover {
+  background-color: rgb(255, 0, 0);
+  color: black;
+}
+
+.btnRespuestaEditar {
+  background-color: rosybrown;
+  color: whitesmoke;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  padding: 2px 10px;
+} .btnRespuestaEditar:hover {
+  background-color: rgb(216, 215, 215);
+  color: black;
+}
+
+.inputNoticiasFull {
+  background-color: rgb(102, 181, 137);
+  border: none;
+  padding: 20px 40px;
+}
+
+.btnComentarioNoticiasFull {
+  background-color: #777777;
+  border: none;
+  border-radius: 3px;
+  margin-top: 5px;
+  padding: 3px;
+} .btnComentarioNoticiasFull:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.btnCalificarNoticiasFull {
+  background-color: goldenrod;
+  color: navy;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 10px;
+} .btnCalificarNoticiasFull:hover {
+  background-color: #ffcc00;
+  color: black;
+}
+
+.noticiasInputComentariosBtn {
+  background-color: #a1dd90;
+  border: none;
+  border-radius: 3px;
+  padding: 3px;
+  margin-top: 5px;
+  margin-left: 2px;
+} .noticiasInputComentariosBtn:hover {
+  background-color: #83bf72;
+  color: white;
+}
+
+.noticiasFullGuardarComentariosBtn {
+  background-color: #819398;
+  border: none;
+  border-radius: 3px;
+  padding: 3px;
+  margin-left: 3px;
+} .noticiasFullGuardarComentariosBtn:hover {
+  background-color: #627479;
+  color: white;
+}
+
+.btnRespuestaEliminar {
+  background-color: #9eabad;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px;
+} .btnRespuestaEliminar:hover {
+  background-color: #ee0c0c;
+  color: black;
+}
+
+.btnRespuestaEditar {
+  background-color: #757575;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 10px;
+} .btnRespuestaEditar:hover {
+  background-color: #514f4f;
+  color: goldenrod;
+}
+
+.inputRespuestaEditNoticias {
+  background-color: #a8d79b;
+  border: none;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 4px;
+} .inputRespuestaEditNoticias:hover {
+  background-color: #83bf72;
+  color: whitesmoke;
+}
+
+.btnRespuestaConfirmarEdit {
+  background-color: #819398;
+  border: none;
+  border-radius: 4px;
+  margin-left: 5px;
+  padding: 4px;
+} .btnRespuestaConfirmarEdit:hover {
+  background-color: #5a6268;
+  color: goldenrod;
+}
+
+.inputRespuestaNoticias {
+  margin-top: 10px;
+  background-color: #83bf72;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+} .inputRespuestaNoticias:hover {
+  background-color: #74a267;
+}
+
+.btnRespuestaNoticias {
+  background-color: #84977f;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-left: 4px;
+} .btnRespuestaNoticias:hover {
+  background-color: #617a5a;
+  color: white;
+}
+
+.btnRespuestaCancelarEdit {
+  border: none;
+  border-radius: 4px;
+  padding: 4px;
+  margin-left: 4px;
+  background-color: #717678;
+} .btnRespuestaCancelarEdit:hover {
+  background-color: #a8b5bf; 
+  color: whitesmoke;
+}
+
+.btnReportes {
+    background-color: navy;
+    color: goldenrod;
+    font-weight: 600;
+    border: none;
+    border-radius: 3px;
+    margin-left: 5px;
+    padding: 10px 30px;
+} .btnReportes:hover {
+    background-color: rgb(13, 13, 189);
+    color: whitesmoke;
+}
+
+.noticiasFullBtnCancelarEdit {
+  border: none;
+  border-radius: 4px;
+  padding: 4px;
+  margin-left: 4px;
+  background-color: #717678;
+} .noticiasFullBtnCancelarEdit:hover {
+  background-color: #a8b5bf; 
+  color: whitesmoke;
+}
+.alertaEliminarCont{
+  position: relative;
+  bottom: 500px;
+}
+

@@ -1,0 +1,64 @@
+.CardContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    gap: 25px;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.Card {
+    width: 425px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.CardContent {
+    padding: 30px;
+}
+
+.CardContent H1 {
+    font-size: 25px;
+    color: rgb(53, 81, 81);
+}
+
+.CardContent h2 {
+    font-family: 'Times New Roman', Times, serif;       
+}
+
+.readMoreCard {
+    font-size: 17px;
+    text-decoration: none;
+    color: #3c8464;
+}
+
+.LogoJPH {
+    max-width: 300px;
+    height: auto;
+    margin-left: 13px;
+    margin-bottom: 10px;
+    border-radius: 80px;
+}
+
+.ElectroCardImg {
+    max-width: 300px;
+    max-height: 250px;
+    margin-left: 70px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.UnflavoredCardImg {
+    max-width: 300px;
+    max-height: 250px;
+    margin-left: 90px;
+}
+
+.CardBars {
+    background-color: #30db8e;
+    padding: 1px;
+    border: 2px solid;
+}

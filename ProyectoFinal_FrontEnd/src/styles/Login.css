@@ -1,0 +1,176 @@
+/* Contenedor del Login */
+.loginContainer {
+    background-color: #4c8768;
+    max-width: 400px;
+    width: 90%;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 40px auto;
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Etiquetas y campos */
+.labelLogin {
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.inputLogin {
+    background-color: #24dfb3e7;
+    border: none;
+    padding: 10px;
+    width: 90%;
+    margin-bottom: 15px;
+    color: black;
+    border-radius: 4px;
+}
+
+.inputLogin:hover {
+    background-color: #dddfdee9;
+}
+
+.loginBtn {
+    background-color: #0a1631ce;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    color: rgba(54, 206, 128, 0.968);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.loginBtn:hover {
+    background-color: #18374bdb;
+    color: rgba(219, 234, 134, 0.92);
+}
+
+/* Logo del inicio */
+.ImgInicioLogo {
+    width: 160px;
+    height: 160px;
+    margin: 20px auto;
+    display: block;
+    box-shadow: 0 0 20px 9px rgba(4, 154, 116, 0.719);
+    transition: 1s;
+    border: 4px solid;
+    animation: borderMove 5s infinite;
+}
+
+.ImgInicioLogo:hover {
+    transform: scale(1.2);
+    z-index: 2;
+    box-shadow: 0 0 20px 2px rgba(5, 220, 120, 0.995);
+}
+
+.tituloInicio {
+    font-size: 28px;
+    color: #02692a;
+    text-align: center;
+    background-color: #FCE4EC;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    transition: 0.5s;
+}
+
+.tituloInicio:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(216, 27, 96, 0.5);
+}
+
+
+.linkInicio {
+    color: rgba(17, 48, 141, 0.902);
+}
+
+/* Alerta Error */
+.error-message-I {
+    color: #c6fdfb;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 20px auto;
+    padding: 12px 21px 12px 46px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #031f14, #2af1c3);
+    border: 3px ridge #025484e6;
+    box-shadow: 0 4px 12px rgba(64, 220, 194, 0.945);
+    position: relative;
+    animation: bounceIn 0.6s ease-out;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+}
+
+.error-message-I::before {
+    content: "🦨💨";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    animation: pulse 2s infinite;
+}
+
+/* Animaciones Inicio */
+@keyframes bounceIn {
+    0% { opacity: 0; transform: scale(0.8) translateY(-20px); }
+    60% { opacity: 1; transform: scale(1.05) translateY(5px); }
+    80% { transform: scale(0.97) translateY(-2px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.2); }
+}
+
+@keyframes borderMove {
+    0%   { border-color: #1e6f5c; }  /* Esmeralda oscuro */
+    25%  { border-color: #234d20; }  /* Verde pino */
+    50%  { border-color: #3b5d2e; }  /* Verde oliva oscuro */
+    75%  { border-color: #2e8b57; }  /* Verde bosque */
+    100% { border-color: #1e6f5c; }  /* Vuelve al inicio */
+}
+
+/*  - MD - Adaptabilidad */
+@media (max-width: 768px) {
+    .loginContainer {
+        padding: 30px;
+    }
+
+    .tituloInicio {
+        font-size: 24px;
+    }
+
+    .ImgInicioLogo {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .loginContainer {
+        padding: 20px;
+    }
+
+    .tituloInicio {
+        font-size: 20px;
+    }
+
+    .loginBtn {
+        width: 100%;
+    }
+
+    .inputLogin {
+        width: 100%;
+    }
+
+    .error-message-I {
+        font-size: 0.9em;
+    }
+}

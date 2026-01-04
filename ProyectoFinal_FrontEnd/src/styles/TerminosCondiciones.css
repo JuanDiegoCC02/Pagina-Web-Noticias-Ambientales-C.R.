@@ -1,0 +1,44 @@
+.terminos-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.terminos-titulo {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #2e7d32;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.terminos-contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.terminos-seccion {
+  padding: 20px;
+  border-left: 4px solid #81c784;
+  background-color: #fafafa;
+  border-radius: 5px;
+}
+
+.seccion-titulo {
+  font-size: 1.2rem;
+  color: #388e3c;
+  margin-bottom: 10px;
+}
+
+.seccion-texto {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  text-align: justify;
+}

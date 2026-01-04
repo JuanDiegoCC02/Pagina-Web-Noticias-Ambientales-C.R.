@@ -1,0 +1,19 @@
+.bienvenidosh1 {
+    background-color: #67AE6E;
+    text-align: center;
+    padding: 5px;
+    margin-top: 30px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.bienSubTitle {
+    background-color: #90C67C;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
