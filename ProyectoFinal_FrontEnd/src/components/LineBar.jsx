@@ -14,8 +14,8 @@ const LineBar = () => {
  useEffect(() => {
   async function list() {   
     const datos = await getUsers("api/publicaciones");
-    const filtradoNoticias = datos.filter((item) => item.nombre_tipo_publicacion === "Noticias");
-    const filtradoCampanas = datos.filter((item) => item.nombre_tipo_publicacion === "Campañas");
+    const filtradoNoticias = datos.filter((item) => item.nombre_tipo_publicacion === "Noticia");
+    const filtradoCampanas = datos.filter((item) => item.nombre_tipo_publicacion === "Campaña");
 
     setSeriesNoticias(filtradoNoticias.length);
     setSeriesCampanas(filtradoCampanas.length);
