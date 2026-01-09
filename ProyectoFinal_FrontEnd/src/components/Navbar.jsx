@@ -49,7 +49,7 @@ function NavBar() {
             )}
 
 
-            <Nav.Link className='linkNavbar' href="/">Home</Nav.Link>
+            <Nav.Link className='linkNavbar' href="/">Inicio</Nav.Link>
             <Nav.Link className='linkNavbar' href="/contacto">Contacto</Nav.Link>
 
             {/*Accesos de usuarios registrado */}
@@ -66,7 +66,7 @@ function NavBar() {
            <Nav.Link className='linkNavbar' href="/registro"> Registro </Nav.Link>
             )}
               {!localStorage.getItem('grupoUsuario') && (
-           <Nav.Link className='linkNavbar' href="/inicio"> Inicio </Nav.Link>
+           <Nav.Link className='linkNavbar' href="/inicio"> Inicio de Sesión </Nav.Link>
             )}
 
 

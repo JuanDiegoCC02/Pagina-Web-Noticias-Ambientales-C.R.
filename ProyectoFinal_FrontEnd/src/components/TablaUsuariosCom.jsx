@@ -11,7 +11,7 @@ function StripedColumnsExample() {
   const [reload, setReload] = useState (false)
   
   // Editar información de usuarios
-  const [mostrar, setMostrar] = useState(false) //Para abrir y cerrar un btn que contiene el input en el que se edita la información
+  const [editUserId, setEditUserId] = useState(null)
   const [edicionAliasUsuario, setEdicionAliasUsuario] = useState("")
   const [edicionNombre, setEdicionNombre] = useState("")
   const [edicionApellido, setEdicionApellido] = useState("")
@@ -29,6 +29,20 @@ function StripedColumnsExample() {
     list()
   }, [reload])
 
+  const startEdit = (user)=>{
+    if (editUserId === user.id) {
+      setEditUserId(null)
+    } else {
+      setEditUserId(user.id)
+      setEdicionAliasUsuario(user.username)
+      setEdicionNombre(user.first_name)
+      setEdicionApellido(user.last_name)
+      setEdicionEmail(user.email)
+      setEdicionFechaNacimiento(user.fecha_nacimiento)
+      setEdicionTelefono(user.telefono)
+    }
+  }
+
   // Funcion para editar la información de los usuarios
 async function actualizar(id) {
   const p = {
@@ -42,7 +56,7 @@ async function actualizar(id) {
   }
   await UpdateUsuarios(p, id)
   setReload(!reload)
-  setMostrar(!mostrar)
+  setEditUserId(null)
 }
 // Función para eliminar Usuarios
 async function EliminarUsuarios(id) {
@@ -76,8 +90,10 @@ async function EliminarUsuarios(id) {
           <td>{user.telefono}</td>
           <td>
           <button className='tablaUsuariosDeleteBtn' onClick={()=> EliminarUsuarios(user.id)}>Eliminar</button>
-          <button className='tablaUsuariosEditBtn' onClick={()=> setMostrar(!mostrar)}>Editar</button>
-          {mostrar &&
+          <button className='tablaUsuariosEditBtn' onClick={()=> startEdit(user)}>
+            {editUserId === user.id ? "cancel" : "edit"}
+          </button>
+          {editUserId === user.id &&
               <> <br />
               {/*/Value se muestra en el input, vinculado al estado que tenga dentro de las llaves*/}
               {/*Onchange actualiza el estado cada vez que cambia el valor del input*/}
@@ -93,7 +109,7 @@ async function EliminarUsuarios(id) {
               <br />
               <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionTelefono(e.target.value)} placeholder='Editar Telefono' />
   
-              <button className='tablaUsuariosConfirmBtn    ' onClick={() => actualizar(user.id)}>Confirmar Edit</button> 
+              <button className='tablaUsuariosConfirmBtn    ' onClick={() => actualizar(user.id)}>guardar edit</button> 
               </>
                     }
           </td>
