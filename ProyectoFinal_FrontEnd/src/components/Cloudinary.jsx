@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { useState } from 'react'
 
 const Cloudinary = () => {
@@ -44,12 +45,12 @@ const Cloudinary = () => {
     };
 
     return (
-        <div>
-            <h5>Ingrese la Imagen de la Publicación </h5>
+        <div className='containerCloudinary'>
+            <h5 className='titleCloudinary'>Inserte la Imagen de la Publicación </h5>
 
             {/* - El siguiente input file envia la imagen por el evento al handler */}
 
-            <input
+            <input className='inpInsertIMG'
                 type="file"
                 name="file"
                 placeholder="Upload an image"
@@ -61,9 +62,9 @@ const Cloudinary = () => {
 
             {/* - Si loading true, Mostramos Loading, si no mostramos la imagen la cual su url deberia estar cargada en un estado local */}
             {loading ? (
-                <h3>Loading...</h3>
+                <h3 className='titleLoading'>Loading...</h3>
             ) : (
-                <img src={image} alt="imagen" />
+                <img className='imgCloudinary' src={image} alt="imagen" />
             )}
             {/* ------------------------------------------------------------------------------------ */}
         </div>

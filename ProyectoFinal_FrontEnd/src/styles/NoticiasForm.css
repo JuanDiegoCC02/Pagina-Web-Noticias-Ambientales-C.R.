@@ -1,118 +1,144 @@
+/* Fuente recomendada: 'Roboto Mono' o 'Inconsolata' (Fuentes de código/tecnológicas) */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap'); */
+
+/* ------------------------------------- */
+/* --- ESTILO 5: Digital Data Grid --- */
+/* ------------------------------------- */
+
 /* CONTENEDOR PRINCIPAL */
 .mainContainerNoticia {
-    background-color: rgba(16, 127, 55, 0.699);
-    padding: 30px 25px;
-    border-radius: 6px;
-    color: rgba(33, 91, 94, 0.914);
-    font-family: 'Times New Roman', Times, serif;
-    max-width: 900px;
-    margin: 40px auto;
-    box-shadow: inset 0 4px 10px rgba(20, 6, 6, 0.734);
-    border: groove 4px rgba(63, 126, 93, 0.721);
+    background-color: #1a202c; /* Fondo oscuro, estilo panel tecnológico */
+    padding: 40px 50px;
+    border-radius: 10px; /* Bordes afilados, más tecnológicos */
+    color: #e2e8f0; /* Texto claro */
+    font-family: 'Roboto Mono', monospace, sans-serif; /* Fuente tecnológica */
+    max-width: 700px;
+    margin: 60px auto;
+    
+    /* Borde sutil con GLOW verde */
+    border: 1px solid #38a16940; 
+    box-shadow: 0 0 20px rgba(56, 161, 105, 0.4); /* Sombra exterior para efecto GLOW */
 }
 
 /* TÍTULO */
 .tituloNoticia {
-    font-size: 25px;
-    margin-bottom: 25px;
-    color: #034c4cec;
-    text-align: center;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #48bb78; /* Verde acento */
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #38a169; /* Línea separadora verde brillante */
 }
 
 /* CONTENEDOR FORM */
 .containerNoticia {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    font-family: 'Times New Roman', Times, serif;
+    gap: 25px; 
     width: 100%;
 }
 
-/* INPUTS */
+/* INPUTS y SELECT */
 .inputTexto,
-.selectNoticias,
-.inputFile {
+.selectNoticias {
     width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: none;
+    padding: 14px 10px;
+    border-radius: 4px; /* Bordes angulares */
+    border: 1px solid #4a5568; /* Borde gris oscuro */
     font-size: 16px;
-    background-color: #a3d1c3d3;
-    transition: background-color 0.3s ease;
-    color: #2d2a2a;
+    background-color: #2d3748; /* Fondo de campo ligeramente más claro que el principal */
+    color: #e2e8f0;
+    transition: all 0.3s ease;
 }
 
-.inputTexto:hover,
-.selectNoticias:hover,
-.inputFile:hover {
-    background-color: #adf9c5ca;
+.inputTexto:focus,
+.selectNoticias:focus {
+    outline: none;
+    border-color: #38a169; /* Borde verde brillante al enfocar */
+    /* Efecto GLOW sutil en el foco */
+    box-shadow: 0 0 5px #38a169, 0 0 10px #38a16920; 
 }
 
-/* BOTÓN */
+/* BOTÓN DE ENVÍO */
 .noticiasBtn {
-    margin-top: 20px;
-    color: white;
-    padding: 10px 20px;
-    font-size: 16px;
+    margin-top: 35px;
+    color: #1a202c; /* Texto oscuro sobre verde */
+    background-color: #38a169; /* Verde brillante principal */
+    padding: 16px 30px;
+    font-size: 1.1em;
+    font-weight: 700;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    border: 2px groove rgb(120, 123, 120);
-    background-color: #0c886d;
-    align-self: center;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    align-self: flex-start;
+    letter-spacing: 1px;
 }
 
 .noticiasBtn:hover {
-    background-color: #e1ece8c6;
-    color: #095337;
-    box-shadow: inset 0 4px 12px rgba(64, 173, 133, 0.59);
+    background-color: #48bb78;
+    color: white;
+    /* GLOW más intenso al pasar el ratón */
+    box-shadow: 0 0 15px #38a169;
 }
 
-/* MENSAJE DE ÉXITO */
+/* MENSAJES DE VALIDACIÓN Y ÉXITO */
+
+/* Mensaje de Error (Campo) */
+.error-message-I {
+    color: #fc8181; /* Rojo claro para alto contraste */
+    font-size: 0.85em;
+    margin-top: -15px;
+    padding-left: 5px;
+    font-weight: 400;
+}
+
+/* Mensaje General (Éxito) */
 .creacion-message-I {
-    color: #e9fdf0;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 20px auto;
+    color: #1a202c; 
+    font-size: 1.1em;
+    font-weight: 700;
+    margin: 30px auto 10px;
     text-align: center;
-    padding: 13px 60px;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #034d34, #50aa83);
-    border: 3px ridge #427957;
-    box-shadow: 0 4px 12px rgba(31, 33, 31, 0.9);
+    padding: 20px 30px;
+    border-radius: 6px;
+    background-color: #48bb78; /* Fondo de mensaje en verde acento */
+    
+    /* Borde y sombra para resaltar */
+    border: 1px solid #1a202c;
+    box-shadow: 0 0 10px #38a169;
     position: relative;
-    animation: bounceIn 0.5s ease-out;
-    max-width: 400px;
-    width: 90%;
+    max-width: 90%;
 }
 
 .creacion-message-I::before {
-    content: "🦖";
+    content: "📡"; /* Icono de señal/tecnología */
     position: absolute;
-    left: 10px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2em;
-    animation: pulse 1s infinite;
+    font-size: 1.5em;
 }
 
+
 /* RESPONSIVE */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
     .mainContainerNoticia {
-        padding: 25px 15px;
+        padding: 30px 25px;
+        margin: 30px 15px;
     }
 
     .tituloNoticia {
-        font-size: 1.4em;
+        font-size: 1.8em;
+        text-align: center; 
     }
 
     .noticiasBtn {
         width: 100%;
-    }
-
-    .creacion-message-I {
-        font-size: 0.9em;
-        padding: 10px;
+        align-self: center; 
     }
 }

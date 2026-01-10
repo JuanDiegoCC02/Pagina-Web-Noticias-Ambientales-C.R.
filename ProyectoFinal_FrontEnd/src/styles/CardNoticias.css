@@ -1,46 +1,80 @@
-/* CardsNoticias.css */
+/* CardsNoticias.css - Estilo Digital Data Grid */
+
+/* --- Colores de Referencia --- */
+/* Fondo Card: #2d3748 (Gris oscuro) */
+/* Verde Principal/Glow: #38a169 */
+/* Texto Claro: #e2e8f0 */
+/* Acento Verde: #48bb78 */
 
 .card-noticia {
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  overflow: hidden;
-  background-color: #ffffff;
+    background-color: #2d3748; /* Fondo oscuro para el panel tech */
+    color: #e2e8f0; /* Texto claro */
+    border-radius: 6px; /* Bordes angulares */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    overflow: hidden;
+    /* Borde sutil y glow inicial */
+    border: 1px solid #38a16940; 
+    box-shadow: 0 0 10px rgba(56, 161, 105, 0.15);
 }
 
 .card-noticia:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px); /* Un poco más de elevación */
+    /* GLOW más intenso al pasar el ratón */
+    box-shadow: 0 5px 25px rgba(56, 161, 105, 0.6);
+    border-color: #38a169;
 }
 
 .card-noticia-img {
-  height: 180px;
-  object-fit: cover;
+    height: 200px; /* Un poco más alta */
+    object-fit: cover;
+    width: 100%;
+    /* Separador sutil con el color tech */
+    border-bottom: 2px solid #38a169;
+}
+
+/* Contenedor del contenido de la tarjeta, si usas Bootstrap o similar, puedes añadir padding aquí */
+.card-body {
+    padding: 15px; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
 }
 
 .card-noticia-title {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #4f585a;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #48bb78; /* Verde de acento brillante */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
 }
 
 .card-noticia-text {
-  font-size: 0.95rem;
-  color: #353836b6;
-  margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #a0aec0; /* Gris pálido, legible sobre fondo oscuro */
+    margin-bottom: 1.2rem;
 }
 
+/* BOTÓN (Mismo estilo que el botón de envío) */
 .card-noticia .btn-primary {
-  background-color: #0c886d;
-  border: none;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+    background-color: #38a169;
+    border: none;
+    color: #1a202c; /* Texto oscuro para alto contraste */
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: center; /* Si el .card-body es flexbox (Solución 1a) */
+    margin-left: 0;
+    margin-right: 0;
+    
 }
 
 .card-noticia .btn-primary:hover {
-  background-color: #daefe5;
-  color: #095337;
-  box-shadow: inset  0 4px 12px rgba(20, 153, 109, 0.59);
+    background-color: #48bb78;
+    color: white;
+    /* GLOW sutil en el botón */
+    box-shadow: 0 0 10px #38a169;
 }
-

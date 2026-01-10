@@ -95,7 +95,7 @@ function NoticiasForm() {
     return (
         <>
             <div className='mainContainerNoticia'>
-                <h2 className='tituloNoticia'>Ingrese Publicación</h2>
+                <h2 className='tituloNoticia'>Creación de la Publicación</h2>
                 <div className='containerNoticia'>
                     {/*/Value se muestra en el input, vinculado al estado que tenga dentro de las llaves*/}
                     {/*Onchange actualiza el estado cada vez que cambia el valor del input*/}
