@@ -95,7 +95,7 @@ function NoticiasForm() {
     return (
         <>
             <div className='mainContainerNoticia'>
-                <h2 className='tituloNoticia'>Creación de la Publicación</h2>
+                <h2 className='tituloNoticia'>Formulario para la Publicación</h2>
                 <div className='containerNoticia'>
                     {/*/Value se muestra en el input, vinculado al estado que tenga dentro de las llaves*/}
                     {/*Onchange actualiza el estado cada vez que cambia el valor del input*/}
@@ -104,7 +104,7 @@ function NoticiasForm() {
                         className='inputTexto'
                         type="text"
                         onChange={TituloF}
-                        placeholder='Titulo Publicación'
+                        placeholder='Titulo de la Publicación.'
                     />
                     {errores.titulo && <p className='error-message-I'>{errores.titulo[0]}</p>}
 
@@ -113,7 +113,7 @@ function NoticiasForm() {
                         className='inputTexto'
                         type="text"
                         onChange={DescripcionF}
-                        placeholder='Descripción Publicación'
+                        placeholder='Descripción de la Publicación.'
                     />
                     {errores.descripcion && <p className='error-message-I'>{errores.descripcion[0]}</p>}
 
@@ -122,7 +122,7 @@ function NoticiasForm() {
                         onChange={(e) => setPublicacion(e.target.value)}
                         className='selectNoticias'
                     >
-                        <option value="" disabled>Tipo de Publicación</option>
+                        <option value="" disabled>Tipo Publicación</option>
                         {TipoPublicacion.map((tipo) => (
                             <option key={tipo.id} value={tipo.id}>{tipo.nombre}</option>
                         ))}
@@ -132,7 +132,7 @@ function NoticiasForm() {
                     <Geolocalizacion />
                     <Cloudinary />
 
-                    <button onClick={enviar} className='noticiasBtn'>Enviar</button>
+                    <button onClick={enviar} className='noticiasBtn'>Publicar</button>
 
                     {mensaje && <p className='error-message-I'>{mensaje}</p>}
 

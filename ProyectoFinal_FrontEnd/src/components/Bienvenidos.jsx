@@ -9,7 +9,7 @@ function Bienvenidos() {
     </div>
 
     <div className='bienSubTitle'>
-        <h2>Informa y mantente informado sobre las últimas noticias ambientales en tiempo real</h2>
+        <h2>Mantente informado e informa sobre las últimas noticias ambientales dentro del país</h2>
     </div>
   </>
   )

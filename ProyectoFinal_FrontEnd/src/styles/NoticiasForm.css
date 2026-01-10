@@ -1,23 +1,13 @@
-/* Fuente recomendada: 'Roboto Mono' o 'Inconsolata' (Fuentes de código/tecnológicas) */
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap'); */
-
-/* ------------------------------------- */
-/* --- ESTILO 5: Digital Data Grid --- */
-/* ------------------------------------- */
-
-/* CONTENEDOR PRINCIPAL */
 .mainContainerNoticia {
-    background-color: #1a202c; /* Fondo oscuro, estilo panel tecnológico */
+    background-color: #056e58;
     padding: 40px 50px;
-    border-radius: 10px; /* Bordes afilados, más tecnológicos */
-    color: #e2e8f0; /* Texto claro */
-    font-family: 'Roboto Mono', monospace, sans-serif; /* Fuente tecnológica */
+    border-radius: 10px; 
+    color: rgb(46, 241, 176); 
+    font-family: 'Roboto Mono', monospace, sans-serif; 
     max-width: 700px;
     margin: 60px auto;
-    
-    /* Borde sutil con GLOW verde */
-    border: 1px solid #38a16940; 
-    box-shadow: 0 0 20px rgba(56, 161, 105, 0.4); /* Sombra exterior para efecto GLOW */
+    border: 1px solid #002014; 
+    box-shadow: 0 0 20px rgb(0, 201, 151); /* Sombra exterior para efecto GLOW */
 }
 
 /* TÍTULO */
@@ -25,13 +15,14 @@
     font-size: 2em;
     font-weight: 700;
     margin-bottom: 35px;
-    color: #48bb78; /* Verde acento */
+    color: #dddddd;
     text-align: left;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #38a169; /* Línea separadora verde brillante */
+    border-bottom: 2px solid #0bffa1;
 }
+
 
 /* CONTENEDOR FORM */
 .containerNoticia {
@@ -42,58 +33,61 @@
 }
 
 /* INPUTS y SELECT */
+.inputTexto::placeholder{
+    color: rgb(207, 207, 207);
+}
 .inputTexto,
 .selectNoticias {
     width: 100%;
     padding: 14px 10px;
-    border-radius: 4px; /* Bordes angulares */
-    border: 1px solid #4a5568; /* Borde gris oscuro */
+    border-radius: 4px; 
+    border: 1px solid #0d271c; 
     font-size: 16px;
-    background-color: #2d3748; /* Fondo de campo ligeramente más claro que el principal */
-    color: #e2e8f0;
+    background-color: #02a863; 
+    color: rgb(0, 46, 31);
     transition: all 0.3s ease;
 }
 
 .inputTexto:focus,
 .selectNoticias:focus {
     outline: none;
-    border-color: #38a169; /* Borde verde brillante al enfocar */
-    /* Efecto GLOW sutil en el foco */
-    box-shadow: 0 0 5px #38a169, 0 0 10px #38a16920; 
+    border-color: #1fd187;
+    box-shadow: 0 0 5px #00ffaad5, 0 0 10px #1effa1ef; 
 }
 
 /* BOTÓN DE ENVÍO */
 .noticiasBtn {
-    margin-top: 35px;
-    color: #1a202c; /* Texto oscuro sobre verde */
-    background-color: #38a169; /* Verde brillante principal */
-    padding: 16px 30px;
+    margin-top: 25px;
+    color: #004234; 
+    background-color: #009c60; 
+    padding: 14px 25px;
     font-size: 1.1em;
     font-weight: 700;
-    border: none;
+    border:  2px, solid rgb(104, 255, 222);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-transform: uppercase;
-    align-self: flex-start;
+    align-self: center;
     letter-spacing: 1px;
+    
+   
 }
 
 .noticiasBtn:hover {
     background-color: #48bb78;
     color: white;
-    /* GLOW más intenso al pasar el ratón */
     box-shadow: 0 0 15px #38a169;
 }
 
-/* MENSAJES DE VALIDACIÓN Y ÉXITO */
+
 
 /* Mensaje de Error (Campo) */
 .error-message-I {
-    color: #fc8181; /* Rojo claro para alto contraste */
+    color: #c6fdfb; 
     font-size: 0.85em;
     margin-top: -15px;
-    padding-left: 5px;
+    padding-left: 45px;
     font-weight: 400;
 }
 
