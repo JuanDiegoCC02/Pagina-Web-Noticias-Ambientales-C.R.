@@ -1,9 +1,9 @@
 .card-noticia {
-    background-color: #004e48; 
+    background-color: #067e60; 
     border-radius: 6px; 
     transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
     overflow: hidden;
-    border: 4px solid #228f61; 
+    border: 4px solid #000000; 
     box-shadow: inset 0 0 10px rgb(0, 31, 14);
     margin-bottom: 35px;
 }
@@ -18,7 +18,7 @@
     height: 200px; 
     object-fit: cover;
     width: 100%;
-    border-bottom: 3px solid #028056;
+    border-bottom: 3px solid #002418;
 }
 
 .card-body {
@@ -30,24 +30,27 @@
 }
 
 .card-noticia-title {
+    padding: 5px;
+    background-color: rgb(115, 255, 208);
+    box-shadow: inset 0 0 10px rgb(0, 31, 14);
     font-size: 1.3rem;
     font-weight: 700;
-    color: #1cc78e; 
+    color: #005f4b; 
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 10px;
     text-shadow: 
     /* Primera sombra: Clara, para un efecto de relieve sutil */
-    1px 1px 3px rgb(0, 0, 0), 
+    1px 1px 3px rgba(22, 255, 158, 0.808), 
     /* Segunda sombra: Oscura, para mayor definición y profundidad */
-    2px 2px 5px rgb(16, 243, 205);
+    2px 2px 5px rgb(0, 41, 34);
 }
 
 
 
 .card-noticia-text {
     font-size: 0.95rem;
-    color: #8fffda; 
+    color: #abf5dc; 
     margin-bottom: 1.2rem;
 }
 

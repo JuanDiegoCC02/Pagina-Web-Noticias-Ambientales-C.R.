@@ -1,8 +1,19 @@
+.containerGeolocalizacion{
+    border: 5px solid rgb(0, 53, 26);
+    box-shadow: 0 0 20px rgb(0, 175, 146); /* Sombra exterior para efecto GLOW */
+    border-radius: 5px;
+}
+.containerCloudinary{
+    box-shadow: inset 0 0 17px rgba(0, 0, 0, 0.74); /* Sombra exterior para efecto GLOW */
+    border-radius: 5px;
+    padding: 5px;
+}
+
 .mainContainerNoticia {
     background-color: #056e58;
     padding: 40px 50px;
     border-radius: 10px; 
-    color: rgb(46, 241, 176); 
+    color: rgb(221, 255, 244); 
     font-family: 'Roboto Mono', monospace, sans-serif; 
     max-width: 700px;
     margin: 60px auto;
@@ -15,12 +26,17 @@
     font-size: 2em;
     font-weight: 700;
     margin-bottom: 35px;
-    color: #dddddd;
+    color: #001f14;
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding-bottom: 10px;
     border-bottom: 2px solid #0bffa1;
+    text-shadow: 
+    /* Primera sombra: Clara, para un efecto de relieve sutil */
+    1px 1px 3px rgba(209, 209, 209, 0.925), 
+    /* Segunda sombra: Oscura, para mayor definición y profundidad */
+    2px 2px 5px rgb(0, 78, 65);
 }
 
 
@@ -34,16 +50,16 @@
 
 /* INPUTS y SELECT */
 .inputTexto::placeholder{
-    color: rgb(207, 207, 207);
+    color: rgb(58, 58, 58);
 }
 .inputTexto,
 .selectNoticias {
-    width: 100%;
+    width: 100%;    
     padding: 14px 10px;
     border-radius: 4px; 
     border: 1px solid #0d271c; 
     font-size: 16px;
-    background-color: #02a863; 
+    background-color: #56f0b0; 
     color: rgb(0, 46, 31);
     transition: all 0.3s ease;
 }
@@ -51,7 +67,7 @@
 .inputTexto:focus,
 .selectNoticias:focus {
     outline: none;
-    border-color: #1fd187;
+    border-color: #c9c9c9;
     box-shadow: 0 0 5px #00ffaad5, 0 0 10px #1effa1ef; 
 }
 
