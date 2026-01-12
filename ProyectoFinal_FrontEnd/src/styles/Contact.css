@@ -11,22 +11,22 @@
 
 /* Formulario Contenedor */
 .contactContainer {
-    background-color: rgba(16, 127, 55, 0.699);
+    background-color: rgba(0, 78, 48, 0.699);
     padding: 30px 25px;
     border-radius: 6px;
-   color: rgba(33, 91, 94, 0.914);
+   color: rgb(0, 32, 23);
     font-family: 'Times New Roman', Times, serif;
     
     flex: 1 1 400px;
     max-width: 450px;
-    box-shadow: inset 0 4px 10px rgba(20, 6, 6, 0.734);
-    border: groove 4px rgba(63, 126, 93, 0.721);
+    box-shadow:  0 4px 10px rgb(0, 0, 0);
+    border: solid 4px rgb(0, 26, 17);
 }
 
 .ContactH2 {
     font-size: 21px;
     margin-bottom: 20px;
-    color: #f1f5f4d7;
+    color: rgb(221, 221, 221);
 }
 
 /* label */
@@ -35,6 +35,7 @@
     text-align: left;
     margin: 30px 0 5px;
     font-weight: bold;
+    
 }
 
 /* input */
@@ -46,13 +47,17 @@
     border-radius: 5px;
     border: none;
     font-size: 16px;
-    background-color: #f0f9f7d3;
+    background-color: #a0fde9d3;
     transition: background-color 0.3s ease;
 }
 
 .contactInput:hover,
-.contactMsg:hover {
-    background-color: #94dbcf;
+.contactMsg:hover{
+    background-color: #f7f7f7;
+}
+.contactInput:focus,
+.contactMsg:focus{
+ background-color: #f7f7f7;
 }
 
 .contactMsg {
@@ -63,40 +68,40 @@
 /* Botón */
 .contactBtn {
     margin-top: 20px;
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    border: 2px groove green;
-  background-color: #0c886d;
-  transition: background-color 0.3s ease;
-    margin-left: 5px;
+    border: 2px groove rgb(0, 78, 61);
+    background-color: #82f5d2;
+    transition: background-color 0.3s ease;
+    align-self: center;
     
 }
 
 .contactBtn:hover {
     
-   background-color: #e1ece8c6;
-   border: 2px groove green;
-  color: #095337;
-  box-shadow:  inset 0 4px 12px rgba(64, 173, 133, 0.59);
+    background-color: #005335c6;
+    border: 2px groove rgb(150, 250, 220);
+    color: #84fabf;
+    box-shadow:  0 4px 12px rgb(165, 226, 204);
 }
 
 /* Contenedor información */
 .SecondContact {
-    background-color: rgba(16, 127, 55, 0.699);
-    color: rgba(33, 91, 94, 0.914);
+    background-color: rgba(0, 78, 48, 0.699);
+     color: rgb(0, 32, 23);
     padding: 30px 25px;
     border-radius: 6px;
     flex: 1 1 400px;
     max-width: 470px;
     font-family: 'Times New Roman', Times, serif;
-  box-shadow: inset 0 4px 10px rgba(20, 6, 6, 0.734);
+    box-shadow:  0 4px 10px rgb(0, 0, 0);
     text-align: center;
-    border: groove 4px rgba(63, 126, 93, 0.721);
+     border: solid 4px rgb(0, 26, 17);
 }
 
 
@@ -120,6 +125,7 @@
     color: #fff;
     font-size: 18px;
     transition: background-color 0.3s ease;
+    
 }
 
 .SecondContact .sci li a:hover {
@@ -129,7 +135,7 @@
 /* Íconos de redes */
 .iconoReds {
     margin-right: 40px;
-    color: rgba(7, 62, 55, 0.826);
+    color: rgba(120, 252, 234, 0.826);
 }
 
 

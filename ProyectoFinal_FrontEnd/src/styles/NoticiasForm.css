@@ -58,12 +58,12 @@
 /* BOTÓN DE ENVÍO */
 .noticiasBtn {
     margin-top: 25px;
-    color: #004234; 
-    background-color: #009c60; 
+    color: rgb(0, 0, 0); 
+    border: 2px solid rgb(0, 22, 17);
+    background-color: #82f5d2;
     padding: 14px 25px;
     font-size: 1.1em;
     font-weight: 700;
-    border:  2px, solid rgb(104, 255, 222);
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -75,9 +75,10 @@
 }
 
 .noticiasBtn:hover {
-    background-color: #48bb78;
-    color: white;
-    box-shadow: 0 0 15px #38a169;
+    background-color: #003d27c6;
+  border: 2px groove rgb(150, 250, 220);
+  color: #84fabf;
+  box-shadow:  0 4px 12px rgb(165, 226, 204);
 }
 
 
