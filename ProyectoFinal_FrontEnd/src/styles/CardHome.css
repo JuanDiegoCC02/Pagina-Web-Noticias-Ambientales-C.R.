@@ -20,12 +20,12 @@
     padding: 30px;
 }
 
-.CardContent H1 {
+.titleVision, .titleMision{
     font-size: 25px;
     color: rgb(53, 81, 81);
 }
 
-.CardContent h2 {
+.textMision, .textVision {
     font-family: 'Times New Roman', Times, serif;       
 }
 

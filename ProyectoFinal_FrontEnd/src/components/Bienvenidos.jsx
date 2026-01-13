@@ -5,11 +5,11 @@ function Bienvenidos() {
   return (
   <>
     <div className='bienvenidosh1'>
-        <h1>Bienvenidos</h1>
+        <h1 className='titleBienvenidos'>Bienvenidos</h1>
     </div>
 
     <div className='bienSubTitle'>
-        <h2>Mantente informado e informa sobre las últimas noticias ambientales dentro del país</h2>
+        <h3 className='subTitleBienvenidos'>Mantente informado e informa sobre las últimas noticias ambientales dentro del país</h3>
     </div>
   </>
   )

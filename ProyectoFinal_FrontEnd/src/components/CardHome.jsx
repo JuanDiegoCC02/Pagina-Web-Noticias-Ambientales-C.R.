@@ -7,20 +7,20 @@ function CardHome() {
     <div className='CardContainer'>
         <div className='Card'>
         <div className='CardContent'>
-        <h1>Misión</h1>
+        <h1 className='titleMision'>Misión</h1>
         <hr className='CardBars' />
-        <h2></h2>
-        <h2>Informar y empoderar a nuestra audiencia sobre temas ambientales cruciales, fomentando la acción y la conciencia ecológica.</h2>
+        
+        <h2 className='textMision'>Informar y empoderar a nuestra audiencia sobre temas ambientales cruciales, fomentando la acción y la conciencia ecológica.</h2>
             <a href="" className='readMoreCard'></a>
         </div>
         </div>
    
         <div className='Card'>
         <div className='CardContent'>
-            <h1>Visión</h1>
+            <h1 className='titleVision'>Visión</h1>
             <hr className='CardBars' />
-            <h2></h2>
-            <h2>Lograr una sociedad más informada y comprometida con la protección del medio ambiente, a través de un periodismo ambiental riguroso y accesible. </h2>
+          
+            <h2 className='textVision'>Lograr una sociedad más informada y comprometida con la protección del medio ambiente, a través de un periodismo ambiental riguroso y accesible. </h2>
             <a href="" className='readMoreCard'></a>
         </div>
 
