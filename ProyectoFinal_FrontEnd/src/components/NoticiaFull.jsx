@@ -1,48 +1,52 @@
   import React, { useEffect, useState } from 'react'
   import { getUsers, deleteUser, postUsers, patchData } from '../services/MainLlamados'
   import "../styles/NoticiaFull.css"
+  
   import MapaCards from './MapaCards'
-  import ReactDOM from 'react-dom/client'
   import CalificacionStarReact from './CalificacionStarReact'
-  import {useNavigate} from "react-router-dom"
+
   import AlertaEliminar from './AlertaEliminar'
   import AlertaEliminarRespuesta from './AlertaEliminarRespuesta'
   import Button from 'react-bootstrap/esm/Button'
+
+
   function NoticiaFull() {
-    const navigate = useNavigate()
-    // Para el map publicaciones
+    const [reload, setReload] = useState(false) 
+    const [alertaEliminar,setAlertaEliminar] = useState(false)
+    const [alertaEliminarRespuesta, setAlertaEliminarRespuesta] = useState(false);
+
     const [publicaciones, setPublicaciones] = useState([])
-    // POST de comentarios
-    const [comentariosPublicaciones, setComentariosPublicaciones] = useState("")
-    const [reload, setReload] = useState(false) // para forzar recargas
-    // Comentarios y respuestas
-    const [comentarios, setComentarios] = useState([])
-    const [comentarioActivo, setComentarioActivo] = useState(null)
-    const [respuestas, setRespuestas] = useState({})
-    const [textoRespuesta, setTextoRespuesta] = useState({})
-    //Edit comentario
-    const [comentarioEditandoId, setComentarioEditandoId] = useState(null);
-    const [editComentario, setEditComentario] = useState("")
-    const [usuario, setUsuario] = useState(null) // Se utiliza en los 2 modales
-    // Edit Respuestas
-    const [editRespuesta, setEditRespuesta] = useState("")
-    const [respuestaEditando, setRespuestaEditando] = useState(null);
-    const [comentarioEditando, setComentarioEditando] = useState(null); // para saber a qué comentario pertenece la respuesta
-    // REPORTES
-    const [reportes, setReportes] = useState(0)
+    const [comentarios, setComentarios] = useState([]) 
     const [cantReportes,setCantReportes] = useState([])
 
-    // Errores
-    const [mensaje, setMensaje] = useState("");
+    const [respuestas, setRespuestas] = useState({})
+    const [textoRespuesta, setTextoRespuesta] = useState({}) 
     const [errores, setErrores] = useState({})
     const [erroresRespuestas, setErroresRespuestas] = useState({})
-    const [alertaEliminar,setAlertaEliminar] = useState(false)
-    const [idEliminarComentario,setIdEliminarComentario] = useState(null)
-    const [alertaEliminarRespuesta, setAlertaEliminarRespuesta] = useState(false);
-    const [respuestaAEliminar, setRespuestaAEliminar] = useState(null);
-    const [comentarioAsociado, setComentarioAsociado] = useState(null);
 
-    // POST para agregar comentarios a la publicacion 
+    const [comentariosPublicaciones, setComentariosPublicaciones] = useState("")
+    const [editComentario, setEditComentario] = useState("")
+    const [editRespuesta, setEditRespuesta] = useState("")
+    
+    const [comentarioActivo, setComentarioActivo] = useState(null)
+    const [comentarioEditandoId, setComentarioEditandoId] = useState(null);
+  
+    const [respuestaEditando, setRespuestaEditando] = useState(null);
+    const [comentarioEditando, setComentarioEditando] = useState(null); 
+      const [respuestaAEliminar, setRespuestaAEliminar] = useState(null);
+    const [comentarioAsociado, setComentarioAsociado] = useState(null);
+    const [idEliminarComentario,setIdEliminarComentario] = useState(null);
+   
+    const [reportes, setReportes] = useState(0)
+   
+    const [usuario, setUsuario] = useState(null) 
+    const [mensaje, setMensaje] = useState("");
+   
+    
+   
+  
+
+    // Post para agregar comentarios a la publicacion 
     async function AggComentario() {
       const erroresLocales = {}; // Validación manual antes de enviar
       if (!comentariosPublicaciones.trim()) erroresLocales.contenido = ["El contenido en el comentario es obligatorio"];
@@ -75,8 +79,8 @@
           }
       }
   }
-    // POST para agregar respuestas a los comentarios de la publicacion
-    // Se usa el comentarioId para identificar a qué comentario se le está agregando la respuesta  
+   
+  //Post para añadir respuesta por medio del id del comentario
     async function AgregarRespuesta(comentarioId) {
       console.log("Comentario ID:", comentarioId);
     if (!textoRespuesta[comentarioId] || !textoRespuesta[comentarioId].trim()) {
@@ -174,7 +178,6 @@
     setErrores({}); // Limpia errores al abrir modal
   }
 
-
     // Eliminar Respuesta Comentario 
     async function eliminarRespuesta(respuestaId, comentarioId) {
       await deleteUser(respuestaId, "api/respuestascomentarios");
@@ -231,19 +234,19 @@
                 <p className='tipoPublicacion'>{p.nombre_tipo_publicacion}</p>
                 <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={300} />
                 <h1 className='tituloPublicacion'>{p.titulo}</h1>
-                <h2>{p.descripcion}</h2>
+                <h2 className='descripPublicacion'>{p.descripcion}</h2>
                 <MapaCards latitud={p.latitud} longitud={p.longitud} />
                 <hr />
                 <React.StrictMode>
                   <CalificacionStarReact />
                 </React.StrictMode>
-                <h2>Haz Click para reportar esta Noticia</h2>
-                <p>Número de Reportes: {cantReportes}</p>
+                <h2 className='tituloReporteNoticia'>Haz Click para reportar esta Noticia</h2>
+                <p className='countReportes'>Número de Reportes: {cantReportes}</p>
                 <button onClick={AggReporte} className='btnReportes'>Reportar</button>
 
-                <h2>Comentarios</h2>
+                <h2 className='tituloComentarios'>Comentarios</h2>
                 <div>
-                  <input className='inputNoticiasFull' type="text" value={comentariosPublicaciones}
+                  <input className='inputComentarioNoticia' type="text" value={comentariosPublicaciones}
                     onChange={(e) => setComentariosPublicaciones(e.target.value)} placeholder='Agregar comentario' />
                       {errores.contenido && <p className='error-message-I'>{errores.contenido[0]}</p>}
                   <br />
@@ -301,7 +304,7 @@
                       {comentarioActivo === comentario.id && (
                         <div className="respuestasContainer">
                           <div>
-                            <h6>Respuestas</h6>
+                            <h6 className='tituloRespuesta'>Respuestas</h6>
                             {respuestas[comentario.id] && respuestas[comentario.id].length > 0 ? (
                               respuestas[comentario.id].map(respuesta => (
                                 <div key={respuesta.id} className="respuestaCard">
