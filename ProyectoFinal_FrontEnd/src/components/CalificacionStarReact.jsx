@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ReactStars from 'react-stars'
 import { GetCalificacionPorUsuarioYPublicacion } from '../services/llamados_usuarios'
 import { postUsers } from '../services/MainLlamados'
+import "../styles/NoticiaFull.css"
 
 
 function CalificacionStarReact() {
@@ -53,8 +54,8 @@ function CalificacionStarReact() {
 
   return (
     <>
-      <div className="container mt-5">
-        <h3>Calificación:</h3>
+      <div className="containerCalificacion">
+        <h3 className='tituloCalificacion'>Calificar Noticia</h3>
         <ReactStars
           count={5}
           value={rating}
@@ -65,7 +66,7 @@ function CalificacionStarReact() {
         />
       </div>
       <button
-        className='btnCalificarNoticiasFull'
+        className='btnCalificarNoticiaFull'
         onClick={enviarCalificacion}
         disabled={disabled}
       >

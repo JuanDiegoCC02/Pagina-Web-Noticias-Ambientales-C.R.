@@ -235,14 +235,19 @@
                 <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={300} />
                 <h1 className='tituloPublicacion'>{p.titulo}</h1>
                 <h2 className='descripPublicacion'>{p.descripcion}</h2>
-                <MapaCards latitud={p.latitud} longitud={p.longitud} />
-                <hr />
+                <div className='containerGeolocalizacion'>
+                 <MapaCards latitud={p.latitud} longitud={p.longitud} />
+                </div>
+             
+                <div>
                 <React.StrictMode>
                   <CalificacionStarReact />
                 </React.StrictMode>
-                <h2 className='tituloReporteNoticia'>Haz Click para reportar esta Noticia</h2>
+                </div><br />
+                
                 <p className='countReportes'>Número de Reportes: {cantReportes}</p>
                 <button onClick={AggReporte} className='btnReportes'>Reportar</button>
+                <h2 className='tituloReporteNoticia'>Haz Click para reportar esta Noticia</h2>
 
                 <h2 className='tituloComentarios'>Comentarios</h2>
                 <div>

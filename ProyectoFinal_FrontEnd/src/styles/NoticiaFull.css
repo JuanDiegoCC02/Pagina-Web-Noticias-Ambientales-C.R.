@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     padding: 40px 20px;
-    background-color: #ebfff9; /* Fondo suave del segundo estilo */
+    background-color: #b9fae6;
     min-height: 100vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -11,10 +11,10 @@
 .noticiasCard {
     width: 100%;
     max-width: 900px;
-    background-color: #067e60; /* Verde base oscuro */
-    border: 4px solid #000000;
+    background-color: #067e60; 
+    border: 4px solid #003a3a;
     border-radius: 12px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 10px 30px rgba(0, 99, 77, 0.801);
     overflow: hidden;
     padding: 25px;
 }
@@ -25,34 +25,35 @@
     height: auto;
     max-height: 500px;
     object-fit: cover;
-    border: 3px solid #000;
+    border: 3px double #9fffd4;
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
 .tipoPublicacion {
     display: inline-block;
-    background-color: #30db8e;
-    color: #000;
+    background-color: #2a3d35;
+    color: #afffe0;
     padding: 5px 15px;
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 4px;
-    border: 2px solid #000;
+    border: 3px double #6bffd3;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .tituloPublicacion {
     font-size: 2.5rem;
-    color: rgb(115, 255, 208);
-    text-shadow: 2px 2px 5px rgb(0, 41, 34);
+    color: rgb(0, 56, 37);
+    text-shadow: 2px 2px 5px rgb(0, 204, 204);
     margin-bottom: 15px;
     text-transform: uppercase;
 }
 
 .descripPublicacion {
     font-size: 1.3rem;
-    color: #ffffff;
+    color: #05ffd5;
     line-height: 1.6;
     text-align: justify;
     margin-bottom: 30px;
@@ -60,13 +61,14 @@
 
 /* SECCIÓN DE REPORTES */
 .tituloReporteNoticia {
-    color: #ffed4a;
+  
+    color: #020202;
     font-size: 1.1rem;
     margin-top: 20px;
 }
 
 .countReportes {
-    color: #ffffff;
+    color: #00160d;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -90,25 +92,25 @@
 
 /* SECCIÓN COMENTARIOS */
 .tituloComentarios {
-    border-top: 2px solid #000;
+    border-top: 2px solid #5cffe4;
     padding-top: 20px;
     margin-top: 40px;
-    color: rgb(115, 255, 208);
+    color: rgb(0, 0, 0);
     text-transform: uppercase;
 }
 
 .inputComentarioNoticia, .noticiasInputComentariosBtn, .inputRespuestaNoticias {
     width: 100%;
     padding: 12px;
-    border: 3px solid #000;
+    border: 3px solid #001f17;
     border-radius: 6px;
-    background-color: #ebfff9;
+    background-color: #55f7c6;
     margin-bottom: 10px;
     font-size: 1rem;
 }
 
 .btnComentarioNoticiasFull, .noticiasFullGuardarComentariosBtn, .btnRespuestaNoticias {
-    background-color: #38a169;
+    background-color: #6cd39f;
     color: #000;
     border: 2px solid #000;
     padding: 10px 25px;
@@ -119,24 +121,32 @@
     border-radius: 4px;
 }
 
-.btnComentarioNoticiasFull:hover {
-    background-color: #48bb78;
+.btnComentarioNoticiasFull:hover, .btnRespuestaNoticias:hover {
+    background-color: #66eb99;
     box-shadow: 0 0 15px #38a169;
 }
 
 /* CARDS DE COMENTARIOS INDIVIDUALES */
 .comentarioCard {
-    background-color: #004e48;
-    border: 2px solid #000;
+    background-color: #045551;
+    border: 2px solid #002922;
     border-radius: 8px;
-    padding: 15px;
+    padding: 10px;
     margin: 15px 0;
-    color: white;
+    color: rgb(131, 255, 214);
+}
+
+.noticiasFullBtnRespuesta{
+padding: 3px;
+background-color: rgb(107, 202, 147);
+border: 1px solid rgb(31, 31, 31);
+border-radius: 5px;
+color: #000000;
 }
 
 .comentarioUsuario {
     font-weight: bold;
-    color: rgb(115, 255, 208);
+    color: rgb(9, 253, 180);
     margin-bottom: 5px;
     font-size: 0.9rem;
 }
@@ -148,19 +158,33 @@
 
 /* BOTONES DE ACCIÓN (EDITAR/ELIMINAR) */
 .noticiasFullBtnEliminar, .btnRespuestaEliminar {
-    background-color: #f56565 !important;
+    background-color: #e01313 !important;
     border: 1px solid #000 !important;
+    color: black;
     font-size: 0.8rem;
     margin-right: 5px;
 }
+.noticiasFullBtnEliminar:hover{
+    color: black;
+
+}
 
 .noticiasFullBtnEdit, .btnRespuestaEditar {
-    background-color: #4299e1;
-    color: white;
+    background-color: #cdff18;
+    color: black;
     border: 1px solid #000;
     padding: 5px 10px;
+    font-size: 0.8rem;
     cursor: pointer;
     border-radius: 4px;
+    margin-right: 5px;
+}
+
+.btnRespuestaCancelarEdit{
+   background-color: #e01313;
+    border: 1px solid #000 ;
+    color: black;
+    font-size: 0.8rem;
     margin-right: 5px;
 }
 
@@ -203,4 +227,32 @@
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: bold;
+}
+
+
+
+/*----------------->ESTILOS CARD DE CALIFICACION<--------------------*/
+
+.containerCalificacion{
+    margin-top: 25px;
+}
+
+.tituloCalificacion{
+    color: #fcff64;
+}
+
+.btnCalificarNoticiaFull{
+    background-color: gold;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    padding: 3px;
+     
+}
+.btnCalificarNoticiaFull:hover{
+    background-color: rgb(0, 0, 0);
+    color: gold;
+    border: 2px solid rgb(251, 255, 33);
+    border-radius: 5px;
+    padding: 3px;
+ 
 }
