@@ -1,139 +1,167 @@
-/* General */
-
-/* Lista del perfil */
-.liPerfil {
-  list-style: none;
-  padding: 30px;
-  margin: 0 auto;
-  max-width: 900px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
+/* CONTENEDOR PRINCIPAL - Tonos tierra/bosque suaves */
+.containerAllPerfil {
+    display: flex;
+    justify-content: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #d4edda 0%, #a3cfbb 100%); /* Degradado ambiental */
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Tarjeta de perfil */
-.PerfilItem {
-  border: 1px solid #b3e5c6;
-  border-radius: 5px;
-  border: 9px;
-  border-style: ridge;
-  border-color: rgb(5, 120, 89) ;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0, 100, 80, 0.903);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #0a7061fc;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.PerfilItem:hover {
-  transform: scale(1.01);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.905);
-
-}
-
-/* Imagen de perfil */
-.perfilIMG {
-  border-radius: 50%;
-  border: 3px solid  #026b56;
-  margin-top: 10px;
-  object-fit: cover;
-  width: 120px;
-  height: 120px;
-   box-shadow:  0 4px 14px rgba(1, 62, 39, 0.934);
-}
-
-/* Botones */
-.btnPerfilEdit,
-.btnConfirmar {
-  background-color: #bac0bd; /* verde menta tecnológica */
-  color: rgb(63, 74, 69);
-  font-weight: bold;
-  border: none;
-  padding: 10px 16px;
-  margin-top: 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btnPerfilEdit:hover,
-.btnConfirmar:hover {
-  background-color: #6ecf9a;
-}
-
-/* Inputs */
-.inptCardPerfil {
-  width: 95%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px solid #c4e8db;
-  border-radius: 6px;
-  background-color: #bae2de;
-  color: #1f3a36;
-  font-size: 14px;
-}
-
-/* Etiquetas destacadas */
-strong {
-  color: #ffffff;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .PerfilItem {
-    padding: 20px;
-  }
-
-  .perfilIMG {
-    width: 90px;
-    height: 90px;
-  }
-
-  .inptCardPerfil {
+/* LA TARJETA - Estilo hoja de bosque */
+.UlPerfil {
+    list-style: none;
+    padding: 0;
     width: 100%;
-  }
-}
-.containerData{
-  margin: 15px;
-  margin-left: 3px;
-  color: #a7dfb9;
+    max-width: 550px;
 }
 
-.containerData ul {
-  padding-left: 20px;
-  margin: 5px 0;
-  
+.LiPerfil {
+    background-color: #f0fff4; /* Verde blanco muy suave */
+    border: 2px solid #2d6a4f; /* Verde bosque profundo */
+    border-radius: 30px; /* Bordes muy redondeados, más orgánicos */
+    box-shadow: 0 15px 35px rgba(45, 106, 79, 0.2);
+    padding: 40px;
+    color: #1b4332;
+    position: relative;
+    border-bottom: 8px solid #2d6a4f; /* Efecto de profundidad */
 }
 
-.containerData li {
-  list-style-type: disc;
-  margin-bottom: 4px;
-  color: #2e3c3a;
+/* FOTO DE PERFIL PERFECTAMENTE CIRCULAR */
+.containerFtPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
-.linkCalificacion{
-color:  #e7ea8b;
-font-family:  fantasy;
-
-
+.perfilIMG {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 4px solid #ffffff;
+    outline: 2px solid #52b788;
+    outline-offset: 3px;
+    box-shadow: 0 10px 25px rgba(45, 106, 79, 0.2);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
 
-.liCalificaiones{
+.perfilIMG:hover {
+    /*zoom limpio */
+    transform: scale(1.08);
+    outline-color: #2d6a4f;
+    outline-offset: 6px;
+    box-shadow: 0 0 25px rgba(82, 183, 136, 0.6);
+}
 
+.tituloFtPerfil {
+    margin-top: 15px;
+    font-weight: 800;
+    color: #00473e;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+}
+
+/* BLOQUES DE INFORMACIÓN - Estilo minimalista natural */
+.containerData {
+    background: rgb(70, 255, 193);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    border-left: 5px solid #009c6d;
+    border-bottom:3px solid #009c6d ;
+    transition: transform 0.2s;
+}
+
+.containerData:hover {
+    transform: translateX(10px);
+    color: white;
+    background-color: #22d69a;
+}
+
+.tituloData {
+    color: #004637;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/* SECCIÓN CALIFICACIONES - Burbujas de agua */
+.UlCalificaciones {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.LiCalificaiones {
+    background: #ffffff;
+    border: 2px solid #b7e4c7;
+    padding: 10px 15px;
+    border-radius: 50px; /* Estilo cápsula */
+    cursor: pointer;
+    font-weight: bold;
+    color: #2d6a4f;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.LiCalificaiones:hover {
+    background: #d8f3dc;
+    border-color: #52b788;
+    transform: translateY(-5px);
+}
+
+/* BOTONES - Estilo piedra pulida */
+.btnPerfilEdit {
+    width: 100%;
+    background-color: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 20px;
+}
+
+.btnPerfilEdit:hover {
+    background-color: #1b4332;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(45, 106, 79, 0.4);
+}
+
+/* INPUTS DE EDICIÓN */
+.inptCardPerfil {
+    width: 100%;
+    background: #fff;
+    border: 2px solid #d8f3dc;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 8px;
+    outline: none;
+}
+
+.inptCardPerfil:focus {
+    border-color: #52b788;
+    background: #f7fffb;
+}
+
+/* TIPO DE USUARIO BADGES */
+.tipoUserHigh {
+    color: #2d6a4f;
+    background: #d8f3dc;
+    padding: 5px 15px;
+    border-radius: 20px;
     display: inline-block;
-    margin: 3px;
-    padding: 5px;
-  background-color: rgb(2, 68, 42);
-border-radius: 4px;
-
-   list-style: none;
-    
 }
-
-.btnVerCalificacion{
-border-radius: 4px;
-background-color: #828886;
-border-style: ridge;
-border-color: rgba(227, 212, 212, 0.853);
-color: rgb(255, 255, 255);
+.btnConfirmar{
+background-color: #a3cfbb;
+border: 3px solid #1b4332;
+border-radius: 3px;
+padding: 3px;
 }

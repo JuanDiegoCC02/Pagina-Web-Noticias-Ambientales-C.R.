@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { GetUsuarios, UpdateUsuarios } from '../services/llamados_usuarios';
 import { getUsers } from '../services/MainLlamados';    //LLamado de para publicaciones
-
-import "../styles/CardPerfil.css"
 import CloudinaryPerfil from './CloudinaryPerfil';
 import { useNavigate } from 'react-router-dom';
+import "../styles/CardPerfil.css"
 
 
 
@@ -87,32 +86,32 @@ async function traerCalificaciones() {
 
   return (
 
-    <div>
+    <div className='containerAllPerfil'>
 
       
-     <ul className="liPerfil">
+     <ul className="UlPerfil">
   {usuarios && usuarios.map(user => (
-      <li key={user.id} className="PerfilItem">
+      <li key={user.id} className="LiPerfil">
 
                    {/*------Foto del Perfil-------*/}
-            <div>
-              <strong>Foto de Perfil</strong><br />
+            <div className='containerFtPerfil'>
+              <strong className='tituloFtPerfil'>Perfil</strong><br />
               <img src={user.foto_perfil} alt="Perfil" className="perfilIMG" width={150} /><br />
             </div>
 
-            <div className='containerData'><strong>Usuario</strong> <br /> {user.username}</div>
-            <div className='containerData'><strong>Nombre</strong> <br /> {user.first_name}</div>
-            <div className='containerData'><strong>Email</strong> <br /> {user.email}</div>
-            <div className='containerData'><strong>Cantidad de Publicaciones</strong> <br /> {publicaciones.length}</div>
+            <div className='containerData'><strong className='tituloData'>Usuario</strong> <br /> {user.username}</div>
+            <div className='containerData'><strong className='tituloData'>Nombre</strong> <br /> {user.first_name}</div>
+            <div className='containerData'><strong className='tituloData'>Email</strong> <br /> {user.email}</div>
+            <div className='containerData'><strong className='tituloData'>Cantidad de Publicaciones</strong> <br /> {publicaciones.length}</div>
 
 
         {/*------Calificaciones Perfil-------*/}
-     <div> <strong>Calificaciones</strong></div>
-       <ul>
+     <div className='containerCalificaciones'> <strong className='tituloCalificaciones'>Calificaciones</strong></div>
+       <ul className='UlCalificaciones'>
           {/*------Map para recorrer las calificaciones del usuario-------*/}
         {calificaciones.map((calificacion, index) => (
           <li 
-            className='liCalificaiones' key={index} onMouseEnter={() => {
+            className='LiCalificaiones' key={index} onMouseEnter={() => {
               if (timeoutId) {
                 clearTimeout(timeoutId);
                 setTimeoutId(null);
@@ -134,7 +133,7 @@ async function traerCalificaciones() {
 
         {/* Mostrar botón de la calificación */}
         {mostrarRedireccion === index && (
-          <div>
+          <div className='containerBtnCalifcacion'>
             <button className='btnVerCalificacion'>Ir a la Publicación</button>
           </div>
       )}
@@ -143,9 +142,9 @@ async function traerCalificaciones() {
 </ul>
 
        <div className='containerData'>
-            <strong>Tipo de Usuario:</strong> {publicaciones.length === 0 ? ( <p>Poco Frecuente 😴</p>) : 
-              publicaciones.length > 5 ? ( <p>Muy Frecuente 😎</p>) :
-              ( <p>Frecuente 😊</p>  )} {/*Valor Intermedio*/}
+            <strong className='tituloTipoUser'>Tipo de Usuario:</strong> {publicaciones.length === 0 ? ( <p className='tipoUserLow'>Poco Frecuente 😴</p>) : 
+              publicaciones.length > 5 ? ( <p className='tipoUserHigh'>Muy Frecuente 😎</p>) :
+              ( <p className='tipoUserMedium'>Frecuente 😊</p>  )} {/*Valor Intermedio*/}
             </div>
 
 
@@ -170,6 +169,7 @@ async function traerCalificaciones() {
                   onChange={(e) => setEdicionEmail(e.target.value)} placeholder='Editar Email' /> <br />
 
                {/*Edit Foto de Perfil*/}
+               <label htmlFor="" className='LbInsertIMG'>Inserte Foto de Perfil</label>
                <CloudinaryPerfil onImageUpload={(url) => setEditImg(url)} />
         
                 <button className='btnConfirmar' onClick={() => actualizar(user.id)}> Confirmar Edición </button>
