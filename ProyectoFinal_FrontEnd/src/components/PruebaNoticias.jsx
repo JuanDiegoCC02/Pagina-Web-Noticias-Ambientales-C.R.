@@ -36,21 +36,36 @@ function PruebaNoticias() {
         }
         TraerPublicaciones()
         }, [reload])  // Se actualiza si 'reload' cambia
+
     
-        // Funcion PATCH para poder editar la información de las publicaciones
-        async function ActualizarPublicaciones(id) {
-            const actPublicacion = {
-                "titulo" : editTitulo,
-                "descripcion" : editDescripcion,
-                "latitud" : editLatitud,
-                "longitud" : editLongitud,  
-                "img" : localStorage.getItem("img") // Usar la imagen guardada en localStorage
-            }
-            await patchData(actPublicacion, "api/publicaciones", id)
-            setReload(!reload)
-            setMostrar(!mostrar) // Oculta el formulario
-        }  
+   // Funcion PATCH para poder editar la información de las publicaciones
+async function ActualizarPublicaciones(id) {
+    const imagenNueva = localStorage.getItem("img");
     
+    const actPublicacion = {
+        "titulo": editTitulo,
+        "descripcion": editDescripcion,
+        "latitud": parseFloat(editLatitud),
+        "longitud": parseFloat(editLongitud),
+    };
+
+    if (imagenNueva) {
+        actPublicacion.img = imagenNueva;
+    }
+
+    try {
+        await patchData(actPublicacion, "api/publicaciones", id);
+        localStorage.removeItem("img");
+        
+        setReload(!reload); 
+        setMostrar(false);  
+    } catch (error) {
+        console.error("Error detallado del servidor:", error);
+        alert("No se logro actualizar la publicación.");
+    }
+}
+
+
         // Funcion para que al dar click al btn de editar se abra el modal con un input precargado con datos
         // y btn para poder agregar y confirmar la nueva informacion
         function abrirModalPublicaciones(usuario) {
@@ -123,7 +138,7 @@ async function cambiarEstado(id, estadoActual) {
           <input type="text" value={editLongitud} onChange={(e) => setEditLongitud(e.target.value)} placeholder='Editar Longitud' />
           <Cloudinary/>
             <br />
-          <button onClick={() => ActualizarPublicaciones(usuario.id)}>Guardar</button>
+          <button className='btnSaveEdit' onClick={() => ActualizarPublicaciones(usuario.id)}>Guardar</button>
           </>
           }
 
