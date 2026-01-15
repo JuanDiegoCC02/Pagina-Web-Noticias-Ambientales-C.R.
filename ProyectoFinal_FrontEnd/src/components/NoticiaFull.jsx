@@ -33,7 +33,7 @@
   
     const [respuestaEditando, setRespuestaEditando] = useState(null);
     const [comentarioEditando, setComentarioEditando] = useState(null); 
-      const [respuestaAEliminar, setRespuestaAEliminar] = useState(null);
+    const [respuestaAEliminar, setRespuestaAEliminar] = useState(null);
     const [comentarioAsociado, setComentarioAsociado] = useState(null);
     const [idEliminarComentario,setIdEliminarComentario] = useState(null);
    

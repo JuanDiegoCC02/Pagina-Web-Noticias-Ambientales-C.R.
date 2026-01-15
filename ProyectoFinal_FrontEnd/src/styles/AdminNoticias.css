@@ -69,15 +69,23 @@
 .eliminarBtn {
     background-color: #d41103;
     border: 2px ridge black;
+    color: black;
     padding: 5px;
     border-radius: 5px;
     margin-bottom: 2px;
     margin: 5px;
 
 }
+.eliminarBtn:hover {
+    color: red;
+    background-color: #000000;
+    border: 2px ridge black;
+
+}
 
 .editarBtn {
     background-color: #f3ff4a;
+    color: black;
     padding: 5px;
     border: 2px ridge black;
     border-radius: 5px;
@@ -85,6 +93,13 @@
     margin-left: 3px;
     margin: 5px;
 }
+.editarBtn:hover {
+    background-color: #000000;
+    color: rgb(234, 255, 44);
+    padding: 5px;
+    border: 2px ridge black;
+}
+
 
 .btnSaveEdit{
       background-color: #f6ff7b;

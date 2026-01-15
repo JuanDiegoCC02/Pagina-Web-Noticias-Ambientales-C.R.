@@ -3,9 +3,14 @@ import { deleteUser, getUsers, patchData } from '../services/MainLlamados'
 import MapaCards from './MapaCards'
 import Cloudinary from './Cloudinary'
 import "../styles/AdminNoticias.css"
+import AlertaEliminar from './AlertaEliminar'
+import Button from 'react-bootstrap/esm/Button'
 
 
 function AdminNoticias() {
+        const [alertaEliminar, setAlertaEliminar]= useState(false)
+        const [idEliminarPublicacion, setIdEliminarPublicacion] = useState(null)
+
     // GET de publicaciones
         const [publicaciones, setPublicaciones] = useState([])
         const [reload, setReload] = useState (false) // Estado para forzar recarga tras editar o eliminar
@@ -82,7 +87,8 @@ async function ActualizarPublicaciones(id) {
         // Funcion DELETE para poder eliminar publicaciones 
         async function EliminarPublicacion(id) {
             await deleteUser (id, "api/publicaciones")
-            setReload(!reload)
+            setReload(r => !r)
+            setAlertaEliminar(false)
         }
         
         // Cambiar los estados de las publicaciones (pendiente, rechazada, publicada)
@@ -127,7 +133,13 @@ async function cambiarEstado(id, estadoActual) {
           </button>
           </div>
           <hr />
-          <button onClick={() => EliminarPublicacion(p.id)} className='eliminarBtn'>Eliminar</button>
+          
+           <Button href='#eliminacion' className='eliminarBtn'
+           onClick={() =>{
+            setAlertaEliminar(true)
+            setIdEliminarPublicacion(p.id)
+           }}>Eliminar</Button>
+
           <button onClick={() => abrirModalPublicaciones(p)} className='editarBtn'>Editar</button>
           
          
@@ -151,6 +163,14 @@ async function cambiarEstado(id, estadoActual) {
       ))}
     </div>
     
+     {alertaEliminar &&
+        <div className='alertaEliminarCont' id='eliminacion'>
+          <AlertaEliminar confirmarEliminar={()=>EliminarPublicacion(idEliminarPublicacion)}
+          denegarEliminar={()=>setAlertaEliminar(false)}
+          />
+          </div>
+                        }
+
   </div>
 </div>
 
