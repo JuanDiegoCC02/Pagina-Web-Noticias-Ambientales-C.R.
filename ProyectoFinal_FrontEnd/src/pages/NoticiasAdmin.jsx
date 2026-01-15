@@ -2,16 +2,19 @@ import React from 'react'
 import NavBar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
 import Footer from '../components/Footer'
-import PruebaNoticias from '../components/PruebaNoticias'
+import AdminNoticias from '../components/AdminNoticias'
 
 function NoticiasAdmin() {
   return (
     <div>
-
-    <NavBar />
+    <nav><NavBar /></nav>
+    
+    <main>
     <Sidebar />
-    <PruebaNoticias />
-    <Footer />
+    <AdminNoticias />
+    </main>
+
+    <footer><Footer /></footer>
 
     </div>
   )

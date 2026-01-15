@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import "../styles/AdminNoticias.css"
 import { deleteUser, getUsers, patchData } from '../services/MainLlamados'
-import Geolocalizacion from './Geolocalizacion'
 import MapaCards from './MapaCards'
 import Cloudinary from './Cloudinary'
+import "../styles/AdminNoticias.css"
 
-function PruebaNoticias() {
+
+function AdminNoticias() {
     // GET de publicaciones
         const [publicaciones, setPublicaciones] = useState([])
         const [reload, setReload] = useState (false) // Estado para forzar recarga tras editar o eliminar
@@ -104,30 +104,35 @@ async function cambiarEstado(id, estadoActual) {
 }
 
   return (
+
+
  <div className='noticiasContainer'>
   <div className='noticiasCard'>
     <div className='noticiasCardContent'>
         
       {publicaciones.map((p) => (
         <div key={p.id} className='noticiasItem'>
+          
           <p className='tipoPublicacion'>{p.nombre_tipo_publicacion}</p>
           <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={300} />
           <h1 className='tituloPublicacion'>{p.titulo}</h1> 
-          <h2> {p.descripcion}</h2>
+          <h2 className='descripPublicacion'> {p.descripcion}</h2>
+          <div className='containerGeolocalizacion'>
           <MapaCards latitud={p.latitud} longitud={p.longitud} />
-          <hr />
-          <button onClick={() => EliminarPublicacion(p.id)} className='eliminarBtn'>Eliminar</button>
-          <button onClick={() => abrirModalPublicaciones(p)} className='editarBtn'>Editar</button>
-
-          <div >
+          </div><br />
+           <div >
           <button className={`btn-estado ${p.estado_publicacion}`} 
             onClick={() => cambiarEstado(p.id, p.estado_publicacion)}>
             {p.estado_publicacion}
           </button>
           </div>
           <hr />
-          <h1>--</h1>
-          <hr />
+          <button onClick={() => EliminarPublicacion(p.id)} className='eliminarBtn'>Eliminar</button>
+          <button onClick={() => abrirModalPublicaciones(p)} className='editarBtn'>Editar</button>
+          
+         
+         
+          
           {mostrar &&
           <><br />  
           {/*/Value se muestra en el input, vinculado al estado que tenga dentro de las llaves*/}
@@ -140,15 +145,16 @@ async function cambiarEstado(id, estadoActual) {
             <br />
           <button className='btnSaveEdit' onClick={() => ActualizarPublicaciones(usuario.id)}>Guardar</button>
           </>
-          }
+          } <hr /><br />
 
         </div>
       ))}
     </div>
+    
   </div>
 </div>
 
   )
 }
 
-export default PruebaNoticias
+export default AdminNoticias
