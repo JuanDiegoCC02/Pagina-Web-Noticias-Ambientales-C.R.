@@ -1,23 +1,26 @@
-/* Botón menú */
+.allSideBar{
+  background-color: #ffffff;
+}
+
 button.me-2 {
-  background-color: rgba(29, 133, 81, 0.712);
+  background-color: #036b54;
   font-family: 'Segoe UI', sans-serif;
-  color: #ffffff;
+  color: #80fff4ea;
   font-weight: 400;
   border: none;
   
   padding: 7px 20px;
   transition: background-color 0.3s ease;
-  margin-left: 25px;
+  margin-left: 5px;
   transition: background-color 0.3s ease, transform 0.2s;
-
-  margin-bottom: 20px;
+  margin-top: 14px;
+  margin-bottom: 15px;
 }
 
 button.me-2:hover {
- background-color: #96c5bb; 
-  color: #095337c6;
-  box-shadow: inset  0 4px 12px rgba(20, 153, 109, 0.59);
+ background-color: #15a183; 
+  color: #ffffffea;
+  box-shadow:   0 4px 12px rgb(0, 255, 170);
     transform: translateY(3px);
 }
 

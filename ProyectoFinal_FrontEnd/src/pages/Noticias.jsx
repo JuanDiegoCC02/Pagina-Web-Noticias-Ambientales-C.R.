@@ -13,7 +13,7 @@ function Noticias() {
  <div>
   <nav>
     <NavBar/>
-   </nav>,
+   </nav>
 
   <main>
     <NoticiasForm/>

@@ -113,11 +113,12 @@
     color: #1a202c; 
     font-size: 1.1em;
     font-weight: 700;
-    margin: 30px auto 10px;
+    margin: 30px auto 15px;
     text-align: center;
     padding: 20px 30px;
     border-radius: 6px;
-    background-color: #48bb78; /* Fondo de mensaje en verde acento */
+    background-color: #6ae2d2; 
+
     
     /* Borde y sombra para resaltar */
     border: 1px solid #1a202c;
@@ -127,9 +128,10 @@
 }
 
 .creacion-message-I::before {
-    content: "📡"; /* Icono de señal/tecnología */
+    content: "🦉"; /* Icono de señal/tecnología */
     position: absolute;
-    left: 20px;
+    left: 0px;
+   
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.5em;

@@ -139,7 +139,7 @@ function NoticiasForm() {
 
                     {mensaje && <p className='error-message-I'>{mensaje}</p>}
 
-                    {publiCreada && <p className='creacion-message-I'>{publiCreada}</p>}
+                    {publiCreada &&   <p className='creacion-message-I'>{publiCreada}</p>}
                 </div>
             </div>
         </>
