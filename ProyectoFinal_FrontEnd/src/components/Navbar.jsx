@@ -10,7 +10,7 @@ import "../styles/Navbar.css"
 
 
 function NavBar() {
-  const [cookies, setCookie, removeCookie] = useCookies(['accessToken'],{
+  const [cookies, setCookies, removeCookie] = useCookies(['accessToken'],{
         doNotParse: true
     })
      const cerrarSesion = () => {
@@ -54,7 +54,7 @@ function NavBar() {
 
             {/*Accesos de usuarios registrado */}
             {localStorage.getItem('grupoUsuario') && (
-              <NavDropdown className='linkConfg' id="collapsible-nav-dropdown" title="👤Mi Cuenta"  >
+              <NavDropdown className='linkConfg' id="collapsible-nav-dropdown"  title="👤Mi Cuenta"   >
               <NavDropdown.Item className='confgbtn' href="/perfil">Perfil</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item className='confgbtn'  onClick={cerrarSesion}>Cerrar Sesión</NavDropdown.Item>

@@ -1,10 +1,11 @@
 .ContainerNavbar {
-    background-color: #328E6E;
-
+    background-color: #11362b;
+   
 }
 
 .MainContainerNavbar {
-    background-color: #328E6E;
+    padding: 5px;
+    background-color: #11362b;
     border-radius: 5px;
     font-size: 22px;
     margin: 10px;
@@ -23,60 +24,68 @@
 
 
 .linkConfg {
-  margin-left: 450px; 
+  margin-left: 70%; 
   font-size: 12px;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(240, 236, 236) ;
-  background-color: #47eeb383; 
-  border: none;
+  color: rgb(255, 255, 255) !important;
+  background-color: #006b47; 
   border-radius: 5px;
   padding: 8px 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.321);
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid white;
 }
 
 .linkConfg:hover {
-  background-color: #afb1b1bb; 
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.395);
+  background-color: #2f8f72bb; 
+  box-shadow: 0 4px 12px rgba(194, 194, 194, 0.733);
+}
+
+.linkConfg > .dropdown-toggle{
+  color: white;
+}
+.linkConfg > .dropdown-toggle:focus{
+  color: white;
 }
 
 
 .linkNavbar {
   font-family: 'Segoe UI', sans-serif;
-  color: #f5fff7; 
+  color: #3effd5; 
   font-size: 20px;
-  text-decoration: none;
   padding: 10px 18px;
-  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
 .linkNavbar:hover {
-  color: #095337;
-  background-color: #e5f3eec2;  
-  border: 3px ;
-  border-color:#328E6E ;
-  text-decoration: none;
-   box-shadow:  0 4px 12px rgba(199, 213, 208, 0.69);
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(216, 248, 253);
+  text-shadow: 
+    /* Primera sombra: Clara, para un efecto de relieve sutil */
+    1px 1px 3px rgb(230, 252, 255), 
+    /* Segunda sombra: Oscura, para mayor definición y profundidad */
+    2px 2px 5px rgb(0, 0, 0);
 }
 
 .confgbtn {
-  background-color: rgba(5, 29, 13, 0.529);/* Verde oliva suave */
+  background-color: rgba(48, 99, 65, 0.952);/* Verde oliva suave */
   font-family: 'Segoe UI', sans-serif;
   color: #ffffff;
   font-weight: 400;
   border: none;
-  border-radius: 3px;
+  border-radius: 35px;
   padding: 7px 20px;
   transition: background-color 0.3s ease;
+  text-align: center;
+ 
 }
 
 .confgbtn:hover {
-  background-color: #96c5bb; /* Verde selva más brillante */
-  color: #095337;
-  box-shadow: inset  0 4px 12px rgba(20, 153, 109, 0.59)
+  background-color: #4afcc1; /* Verde selva más brillante */
+  color: #004b2d;
+  box-shadow: inset  0 4px 12px rgba(20, 153, 109, 0.979)
 }
 
 
