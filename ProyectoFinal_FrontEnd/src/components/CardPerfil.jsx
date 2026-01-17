@@ -134,7 +134,7 @@ async function traerCalificaciones() {
         {/* Mostrar botón de la calificación */}
         {mostrarRedireccion === index && (
           <div className='containerBtnCalifcacion'>
-            <button className='btnVerCalificacion'>Ir a la Publicación</button>
+            <button className='btnVerCalificacion'>Ver Publicación</button>
           </div>
       )}
     </li>

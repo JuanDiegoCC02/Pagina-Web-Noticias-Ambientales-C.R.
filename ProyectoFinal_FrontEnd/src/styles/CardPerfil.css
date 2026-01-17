@@ -1,14 +1,12 @@
-/* CONTENEDOR PRINCIPAL - Tonos tierra/bosque suaves */
 .containerAllPerfil {
     display: flex;
     justify-content: center;
     padding: 50px 20px;
-    background: linear-gradient(135deg, #d4edda 0%, #a3cfbb 100%); /* Degradado ambiental */
+    background-color: #23523d;
     min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* LA TARJETA - Estilo hoja de bosque */
 .UlPerfil {
     list-style: none;
     padding: 0;
@@ -17,17 +15,16 @@
 }
 
 .LiPerfil {
-    background-color: #f0fff4; /* Verde blanco muy suave */
-    border: 2px solid #2d6a4f; /* Verde bosque profundo */
-    border-radius: 30px; /* Bordes muy redondeados, más orgánicos */
+    background-color: #d4fff6; 
+    border: 7px ridge #000000;
+    border-radius: 30px; 
     box-shadow: 0 15px 35px rgba(45, 106, 79, 0.2);
     padding: 40px;
     color: #1b4332;
     position: relative;
-    border-bottom: 8px solid #2d6a4f; /* Efecto de profundidad */
+    border-bottom: 8px solid #004e37; 
 }
 
-/* FOTO DE PERFIL PERFECTAMENTE CIRCULAR */
 .containerFtPerfil {
     display: flex;
     flex-direction: column;
@@ -40,8 +37,8 @@
     height: 200px;
     border-radius: 50%; 
     object-fit: cover;
-    border: 4px solid #ffffff;
-    outline: 2px solid #52b788;
+    border: 4px solid #004133;
+    outline: 2px solid #41bb82;
     outline-offset: 3px;
     box-shadow: 0 10px 25px rgba(45, 106, 79, 0.2);
     transition: all 0.5s ease-in-out;
@@ -51,15 +48,15 @@
 .perfilIMG:hover {
     /*zoom limpio */
     transform: scale(1.08);
-    outline-color: #2d6a4f;
+    outline-color: #005a44;
     outline-offset: 6px;
-    box-shadow: 0 0 25px rgba(82, 183, 136, 0.6);
+    box-shadow: 0 0 25px rgb(28, 212, 126);
 }
 
 .tituloFtPerfil {
     margin-top: 15px;
     font-weight: 800;
-    color: #00473e;
+    color: #004735;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
@@ -67,23 +64,26 @@
 
 /* BLOQUES DE INFORMACIÓN - Estilo minimalista natural */
 .containerData {
-    background: rgb(70, 255, 193);
+    background: rgb(0, 61, 41);
+    color: white;
     padding: 15px;
     border-radius: 15px;
     margin-bottom: 12px;
-    border-left: 5px solid #009c6d;
-    border-bottom:3px solid #009c6d ;
+    border-left: 5px solid #000000;
+    border-bottom:3px solid #000000 ;
     transition: transform 0.2s;
 }
 
 .containerData:hover {
     transform: translateX(10px);
-    color: white;
-    background-color: #22d69a;
+    color: rgb(229, 255, 116);
+    background-color: #000000ef;
+     border-left: 5px solid #000000;
+    border-bottom:3px solid #000000 ;
 }
 
 .tituloData {
-    color: #004637;
+    color: #63fddc;
     font-size: 0.75rem;
     font-weight: bold;
 }
@@ -95,30 +95,32 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 20px 0;
+    list-style: none;
 }
 
 .LiCalificaiones {
-    background: #ffffff;
-    border: 2px solid #b7e4c7;
-    padding: 10px 15px;
+    background: #004e48;
+    border: 2px solid #000000;
+    padding: 12px 25px;
     border-radius: 50px; /* Estilo cápsula */
     cursor: pointer;
     font-weight: bold;
-    color: #2d6a4f;
+    color: #98ffe0;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .LiCalificaiones:hover {
-    background: #d8f3dc;
-    border-color: #52b788;
+    background: #00382f;
+    border-color: #fff565;
+    color: gold;
     transform: translateY(-5px);
 }
 
 /* BOTONES - Estilo piedra pulida */
 .btnPerfilEdit {
     width: 100%;
-    background-color: #2d6a4f;
-    color: white;
+    background-color: #144237;
+    color: rgb(250, 252, 132);
     border: none;
     padding: 15px;
     border-radius: 15px;
@@ -130,9 +132,9 @@
 }
 
 .btnPerfilEdit:hover {
-    background-color: #1b4332;
+    background-color: #000000;
     letter-spacing: 1px;
-    box-shadow: 0 5px 15px rgba(45, 106, 79, 0.4);
+    box-shadow: 0 5px 15px rgba(240, 255, 24, 0.959);
 }
 
 /* INPUTS DE EDICIÓN */
@@ -164,4 +166,11 @@ background-color: #a3cfbb;
 border: 3px solid #1b4332;
 border-radius: 3px;
 padding: 3px;
+}
+.btnVerCalificacion{
+    background-color: black;
+    color: #fbff20;
+    border: 1px solid gold;
+    border-radius: 5px;
+    padding: 3px 7px;
 }
