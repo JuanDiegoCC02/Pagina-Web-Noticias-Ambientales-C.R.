@@ -120,13 +120,13 @@ async function cambiarEstado(id, estadoActual) {
         <div key={p.id} className='noticiasItem'>
           
           <p className='tipoPublicacion'>{p.nombre_tipo_publicacion}</p>
-          <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={300} />
+          <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={200} />
           <h1 className='tituloPublicacion'>{p.titulo}</h1> 
           <h2 className='descripPublicacion'> {p.descripcion}</h2>
           <div className='containerGeolocalizacion'>
           <MapaCards latitud={p.latitud} longitud={p.longitud} />
           </div><br />
-           <div >
+           <div className='' >
           <button className={`btn-estado ${p.estado_publicacion}`} 
             onClick={() => cambiarEstado(p.id, p.estado_publicacion)}>
             {p.estado_publicacion}
@@ -157,7 +157,7 @@ async function cambiarEstado(id, estadoActual) {
             <br />
           <button className='btnSaveEdit' onClick={() => ActualizarPublicaciones(usuario.id)}>Guardar</button>
           </>
-          } <hr /><br />
+          }  <hr className='theEndHR' /><br />
 
         </div>
       ))}

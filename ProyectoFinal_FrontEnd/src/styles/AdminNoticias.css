@@ -16,6 +16,11 @@
     padding: 20px;
 }
 
+.theEndHR{
+    background-color: Gold;
+    border: 3px  groove rgb(255, 255, 255) ;
+}
+
 .red-circle {
     width: 50px;
     height: 50px;
@@ -52,15 +57,7 @@
     color: white;
 }
 
-.tipoPublicacion {
-    background-color: rgb(15, 138, 117);
-    max-width: 100px;
-    text-align: center;
-    justify-content: center;
-    color: #f0f0f0;
-    font-weight: bold;
-    border-radius: 5px;
-}
+
 
 .tituloPublicacion {
     font-weight: bold;
@@ -108,3 +105,4 @@
     border-radius: 5px;
     margin-bottom: 25px;
 }
+

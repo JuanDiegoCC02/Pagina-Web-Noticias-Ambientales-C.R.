@@ -6,7 +6,7 @@ function TerminosCondiciones() {
     <div>
         <div className='ImgInicioLogo'>
             <a href="/">
-         <img src="../src/Images/Logo Pag Noticias.jpg" alt="" />
+         <img src="../src/Images/Logo Pag Noticias.jpg" alt="" width={150} height={150} />
          </a>
          </div><br /><br />
       <div className="terminos-container">

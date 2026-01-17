@@ -21,13 +21,14 @@
 
 /* IMAGEN Y CABECERA */
 .noticiasIMG {
-    width: 100%;
+    width: 90%;
     height: auto;
     max-height: 500px;
     object-fit: cover;
     border: 3px double #9fffd4;
     border-radius: 8px;
     margin-bottom: 20px;
+    margin-left: 5%;
 }
 
 .tipoPublicacion {
