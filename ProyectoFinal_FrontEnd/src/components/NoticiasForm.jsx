@@ -128,10 +128,10 @@ function NoticiasForm() {
                         ))}
                     </select>
                     {errores.tipopublicacion && <p className='error-message-I'>{errores.tipopublicacion[0]}</p>}
-                    <div className='containerGeolocalizacion'>
+                    <div className='containerFormGeolocalizacion'>
                     <Geolocalizacion />
                     </div>
-                    <div className='containerCloudinary'>
+                    <div className='containerFormCloudinary'>
                     <Cloudinary />
                     </div>
 

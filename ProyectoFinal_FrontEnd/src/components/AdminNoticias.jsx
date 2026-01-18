@@ -120,9 +120,13 @@ async function cambiarEstado(id, estadoActual) {
         <div key={p.id} className='noticiasItem'>
           
           <p className='tipoPublicacion'>{p.nombre_tipo_publicacion}</p>
-          <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={200} />
           <h1 className='tituloPublicacion'>{p.titulo}</h1> 
           <h2 className='descripPublicacion'> {p.descripcion}</h2>
+          <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={200} />
+          
+         
+          
+          <label htmlFor="" className='ubicacionLb'>Ubicación</label>
           <div className='containerGeolocalizacion'>
           <MapaCards latitud={p.latitud} longitud={p.longitud} />
           </div><br />

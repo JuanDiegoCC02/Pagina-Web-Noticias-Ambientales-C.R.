@@ -56,14 +56,14 @@ function CalificacionStarReact() {
     <>
       <div className="containerCalificacion">
         <h3 className='tituloCalificacion'>Calificar Noticia</h3>
-        <ReactStars
-          count={5}
-          value={rating}
-          onChange={ratingChanged}
-          size={24}
-          color2={'#ffd700'}
-          edit={!disabled} 
-        />
+    <ReactStars
+        count={5}
+        value={rating}
+        onChange={ratingChanged}
+        size={24}
+        color2={'#ffd700'} 
+        edit={!disabled} 
+    />
       </div>
       <button
         className='btnCalificarNoticiaFull'

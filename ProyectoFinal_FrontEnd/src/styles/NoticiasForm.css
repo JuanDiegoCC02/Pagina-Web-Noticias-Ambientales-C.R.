@@ -1,9 +1,9 @@
-.containerGeolocalizacion{
+.containerFormGeolocalizacion{
     border: 5px solid rgb(0, 53, 26);
     box-shadow: 0 0 20px rgb(0, 175, 146); /* Sombra exterior para efecto GLOW */
     border-radius: 5px;
 }
-.containerCloudinary{
+.containerFormCloudinary{
     box-shadow: inset 0 0 17px rgba(0, 0, 0, 0.74); /* Sombra exterior para efecto GLOW */
     border-radius: 5px;
     padding: 5px;
