@@ -61,13 +61,13 @@ function ContactForm() {
     <div className='contactContainer'>
       <h1>Formulario de Contactos</h1> <br />
     <label className='contactLabel' htmlFor="">Nombre</label>
-    <input className='contactInput' value={NombreContact} onChange={nombre_contact} type="text" />
+    <input className='contactInput' value={NombreContact} onChange={nombre_contact} type="text" placeholder='nombre completo' />
       <hr />
     <label className='contactLabel' htmlFor="">Email</label>
-    <input className='contactInput' value={EmailContact} onChange={email_contact} type="email" />
+    <input className='contactInput' value={EmailContact} onChange={email_contact} type="email" placeholder='usuario@email.com' />
       <hr />
     <label className='contactLabel' htmlFor="">Telefono</label>
-    <input className='contactInput' value={TelefonoContact} onChange={telefono_contact} type="text" />
+    <input className='contactInput' value={TelefonoContact} onChange={telefono_contact} type="text" placeholder='1111-1111'/>
       <hr />
        <label className='contactLabel' htmlFor="">Comentario</label>
       <input className='contactMsg' value={TextContact} onChange={contact_text} type="text" placeholder='Mensaje' />

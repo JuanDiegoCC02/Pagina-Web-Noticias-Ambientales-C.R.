@@ -5,28 +5,28 @@
     gap: 60px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     justify-content: center;
 }
 
 /* Formulario Contenedor */
 .contactContainer {
-    background-color: rgba(0, 78, 48, 0.699);
+    background-color: rgb(73, 179, 138);
     padding: 30px 25px;
     border-radius: 6px;
-   color: rgb(0, 32, 23);
+    color: rgb(0, 0, 0);
     font-family: 'Times New Roman', Times, serif;
     
     flex: 1 1 400px;
     max-width: 450px;
     box-shadow:  0 4px 10px rgb(0, 0, 0);
-    border: solid 4px rgb(0, 26, 17);
+    border: groove 4px rgb(0, 90, 63);
 }
 
 .ContactH2 {
     font-size: 21px;
     margin-bottom: 20px;
-    color: rgb(221, 221, 221);
+    color: rgb(255, 255, 255);
 }
 
 /* label */
@@ -47,7 +47,7 @@
     border-radius: 5px;
     border: none;
     font-size: 16px;
-    background-color: #a0fde9d3;
+    background-color: #9de6d0d3;
     transition: background-color 0.3s ease;
 }
 
@@ -78,7 +78,7 @@
     border: 2px groove rgb(0, 78, 61);
     background-color: #82f5d2;
     transition: background-color 0.3s ease;
-    align-self: center;
+    margin-bottom: 20px;
     
 }
 
@@ -86,14 +86,14 @@
     
     background-color: #005335c6;
     border: 2px groove rgb(150, 250, 220);
-    color: #84fabf;
+    color: #ffffff;
     box-shadow:  0 4px 12px rgb(165, 226, 204);
 }
 
 /* Contenedor información */
 .SecondContact {
-    background-color: rgba(0, 78, 48, 0.699);
-     color: rgb(0, 32, 23);
+    background-color: rgb(73, 179, 138);
+    color: rgb(0, 0, 0);
     padding: 30px 25px;
     border-radius: 6px;
     flex: 1 1 400px;
@@ -101,7 +101,8 @@
     font-family: 'Times New Roman', Times, serif;
     box-shadow:  0 4px 10px rgb(0, 0, 0);
     text-align: center;
-     border: solid 4px rgb(0, 26, 17);
+    border: groove 4px rgb(0, 90, 63);
+
 }
 
 
@@ -135,7 +136,7 @@
 /* Íconos de redes */
 .iconoReds {
     margin-right: 40px;
-    color: rgba(120, 252, 234, 0.826);
+    color: rgb(255, 255, 255);
 }
 
 
