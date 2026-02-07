@@ -3,6 +3,7 @@
 }
 
 .tablaUsuariosDeleteBtn {
+    padding: 2px;
     border: none;
 }
 .tablaUsuariosDeleteBtn:hover {
@@ -12,6 +13,7 @@
 
 .tablaUsuariosEditBtn {
     border: none;
+    padding: 2px;
     margin-left: 10px;
 }
 .tablaUsuariosEditBtn:hover {
@@ -21,6 +23,8 @@
 
 .tablaUsuariosConfirmBtn {
     border: none;
+    padding: 2px;
+    margin: 7px;
 }
 .tablaUsuariosConfirmBtn:hover {
     background-color: #494949;
@@ -28,11 +32,14 @@
 }
 
 .inputTablaUsuarios {
+    margin:  4px auto;
     border: 2px solid;
+    background-color: #c7c7c7;
+    border: 1px solid black;
 }
 
 .inputTablaUsuarios:hover {
-    background-color: rgb(225, 223, 223);
+    background-color: rgb(207, 255, 253);
 }
 
 @media (max-width: 768px) {

@@ -91,25 +91,27 @@ async function EliminarUsuarios(id) {
           <td>
           <button className='tablaUsuariosDeleteBtn' onClick={()=> EliminarUsuarios(user.id)}>Eliminar</button>
           <button className='tablaUsuariosEditBtn' onClick={()=> startEdit(user)}>
-            {editUserId === user.id ? "cancel" : "edit"}
+            {editUserId === user.id ? "Cancel" : "Edit"}
           </button>
           {editUserId === user.id &&
-              <> <br />
+              <> 
+              <button className='tablaUsuariosConfirmBtn    ' onClick={() => actualizar(user.id)}>Guardar</button> 
+
               {/*/Value se muestra en el input, vinculado al estado que tenga dentro de las llaves*/}
               {/*Onchange actualiza el estado cada vez que cambia el valor del input*/}
-              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionAliasUsuario(e.target.value)} placeholder='Editar Alias Usuario' />
               <br />
-              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionNombre(e.target.value)} placeholder='Editar Nombre' />
+              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionAliasUsuario(e.target.value)} placeholder=' Alias Usuario' value={edicionAliasUsuario} />
               <br />
-              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionApellido(e.target.value)} placeholder='Editar Apellido' />
+              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionNombre(e.target.value)} placeholder=' Nombre' value={edicionNombre} />
               <br />
-              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionEmail(e.target.value)} placeholder='Editar Email' />
+              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionApellido(e.target.value)} placeholder=' Apellidos' value={edicionApellido} />
+              <br />
+              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionEmail(e.target.value)} placeholder=' Email' value={edicionEmail} />
               <br /> 
-              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionFechaNacimiento(e.target.value)} placeholder='Editar Fecha Nacimiento' />
+              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionFechaNacimiento(e.target.value)} placeholder=' Fecha Nacimiento' value={edicionFechaNacimiento} />
               <br />
-              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionTelefono(e.target.value)} placeholder='Editar Telefono' />
+              <input type="text" className='inputTablaUsuarios' onChange={(e) => setEdicionTelefono(e.target.value)} placeholder=' Telefono' value={edicionTelefono} />
   
-              <button className='tablaUsuariosConfirmBtn    ' onClick={() => actualizar(user.id)}>guardar edit</button> 
               </>
                     }
           </td>

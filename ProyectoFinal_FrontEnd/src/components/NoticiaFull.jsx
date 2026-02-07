@@ -246,10 +246,10 @@
                 </React.StrictMode>
                 </div><br />
                 
-                <p className='countReportes'>Número de Reportes: {cantReportes}</p>
+                <h2 className='tituloReporteNoticia'>Haz Click para reportar la Noticia</h2>
                 <button onClick={AggReporte} className='btnReportes'>Reportar</button>
-                <h2 className='tituloReporteNoticia'>Haz Click para reportar esta Noticia</h2>
-
+                <p className='countReportes'>Número de Reportes: {cantReportes}</p>
+                
                 <h2 className='tituloComentarios'>Comentarios</h2>
                 <div>
                   <input className='inputComentarioNoticia' type="text" value={comentariosPublicaciones}
