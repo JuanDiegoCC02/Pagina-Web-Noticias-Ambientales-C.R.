@@ -1,0 +1,13 @@
+.containerCloudinary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.imgCloudinary {
+    max-width: 400px; 
+    height: auto;
+    width: 100%;
+    object-fit: cover; 
+}

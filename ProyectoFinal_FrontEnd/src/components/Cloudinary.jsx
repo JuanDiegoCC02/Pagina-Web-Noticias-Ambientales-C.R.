@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "../styles/Cloudinary.css"
 import { useState } from 'react'
 
 const Cloudinary = () => {
