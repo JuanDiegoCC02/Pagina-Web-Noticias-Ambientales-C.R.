@@ -37,7 +37,8 @@ function AdminNoticias() {
         // Funcion GET para traer las publicaciones
         async function TraerPublicaciones() {
             const datos = await getUsers("api/publicaciones")
-            setPublicaciones(datos)
+            const ordenados = [...datos].sort((a, b) => b.id - a.id)
+            setPublicaciones(ordenados)
         }
         TraerPublicaciones()
         }, [reload])  // Se actualiza si 'reload' cambia

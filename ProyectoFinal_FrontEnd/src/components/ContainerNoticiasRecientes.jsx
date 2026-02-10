@@ -14,7 +14,8 @@ function ContainerNoticiasRecientes() {
       const peticion = await getUsers("api/publicaciones")
       // Filtro para mostrar solo publicaciones que tengan el estado de "publicada"
       const filtro = peticion.filter((peticion)=> peticion.estado_publicacion === "publicada")
-      setNoticias(filtro)  //Para actualizar el estado con las noticias filtradas
+      const orden = [...filtro].sort ((a, b) => b.id - a.id)
+      setNoticias(orden)  //Para actualizar el estado con las noticias filtradas
     }
     traeNoticias()
   }, []) // Arreglo vacío significa que solo se ejecuta una vez
