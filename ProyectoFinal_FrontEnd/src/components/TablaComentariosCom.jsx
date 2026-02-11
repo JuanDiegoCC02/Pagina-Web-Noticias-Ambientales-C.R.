@@ -1,112 +1,121 @@
 import Table from 'react-bootstrap/Table';
-import React, { useEffect, useState } from 'react'
-import { getUsers, patchData, deleteUser } from '../services/MainLlamados'
-import "../styles/TablaUsuarios.css"
+import React, { useEffect, useState } from 'react';
+import { getUsers, patchData, deleteUser } from '../services/MainLlamados';
+import "../styles/TablaUsuarios.css";
 
 function TablaComentariosCom() {
-    // Se utiliza para el GET de comentarios
-    const [comentarios, setComentarios] = useState ([])
-    // Para recargar
-    const [reload, setReload] = useState (false)
-    // Abrir el input y btn para poder editar la informacion
-    const [mostrar, setMostrar] = useState(false)
-    // Se utiliza para el EDIT de comentarios
-    const [editNombre, setEditNombre] = useState("")
-    const [editEmail, setEditEMail] = useState("")
-    const [editTelefono, setEditTelefono] = useState("")
-    const [editComentario, setEditComentario] = useState("")
-    const [usuario,setUsuario] = useState(null) //Estado para almacenar el usuario seleccionado para edición
+    // Estados para los datos y control
+    const [comentarios, setComentarios] = useState([]);
+    const [reload, setReload] = useState(false);
+    const [mostrar, setMostrar] = useState(false);
+    const [usuario, setUsuario] = useState(null); // Usuario seleccionado para edición
 
-  useEffect(() => {
-    // Si hay un usuario activo, se precargan sus datos en los inputs
-    if(usuario){
-      console.log("entra al usuario");
-      console.log(usuario);
-      setEditNombre(usuario.nombre)
+    // Estados para los inputs del formulario
+    const [editNombre, setEditNombre] = useState("");
+    const [editEmail, setEditEMail] = useState("");
+    const [editTelefono, setEditTelefono] = useState("");
+    const [editComentario, setEditComentario] = useState("");
+
+    useEffect(() => {
+        async function TraerComentarios() {
+            const datos = await getUsers("api/emails-contacto");
+            // Orden para que el más reciente (ID mayor) aparezca primero
+            const ordenados = [...datos].sort((a, b) => b.id - a.id);
+            setComentarios(ordenados);
+        }
+        TraerComentarios();
+    }, [reload]);
+
+    // edicion funtion
+    function abrirModal(item) {
+        setUsuario(item);
+        setEditNombre(item.nombre);
+        setEditEMail(item.email);
+        setEditTelefono(item.telefono);
+        setEditComentario(item.mensaje);
+        setMostrar(true);
     }
-    // Funcion GET para mostrar los comentarios
-    async function TraerComentarios() {
-      const datos = await getUsers("api/emails-contacto")
-      setComentarios (datos)
+
+    // update funcion
+    async function actualizarComentarios(id) {
+        const actComentario = {
+            "nombre": editNombre,
+            "email": editEmail,
+            "telefono": editTelefono,
+            "mensaje": editComentario
+        };
+        // Verifica si es "emailscontacto" o "emails-contacto"
+        await patchData(actComentario, "api/emails-contacto", id);
+        setReload(!reload);
+        setMostrar(false);
+        setUsuario(null);
     }
-    TraerComentarios()
-  }, [reload])
 
-  // Funcion PATCH para poder editar la informacion 
-  async function actualizarComentarios(id) {
-    const actComentario = {
-      "nombre" : editNombre,
-      "email" : editEmail,
-      "telefono" : editTelefono,
-      "mensaje" : editComentario
+    //  delete funcion
+    async function EliminarContacto(id) {
+        await deleteUser(id, "api/emails-contacto");
+        setReload(!reload);
     }
-    await patchData (actComentario, "api/emailscontacto", id)
-    setReload(!reload)
-    setMostrar(!mostrar)
-  }
 
-  // Funcion DELETE para eliminar solicitudes de contacto
-  async function EliminarContacto(id) {
-  await deleteUser(id, "api/emailscontacto")
-  setReload(!reload)
-}
-
-  // Funcion para abrir el modal en el Btn de editar que despliega inputs en los que
-  // se coloca la nueva informacion y un btn de confirmar
-  function abrirModal(usuario) {  
-    setUsuario(usuario) 
-    setEditNombre(usuario.nombre)
-    setEditEMail(usuario.email)
-    setEditTelefono(usuario.telefono)
-    setEditComentario(usuario.mensaje)
-    setMostrar(true)
-    console.log(editNombre);
-  }
-
-  return (
-     <Table responsive="sm" striped="columns">
-      <thead >
-        <tr> {/*Para mostrar a que cuadro pertenece la información */}
-          <th style={{backgroundColor:"#5b5b5b"}} className='pruebaWe'>#</th>
-          <th style={{backgroundColor:"#68c4af"}}>Nombre</th>
-          <th style={{backgroundColor:"#68c4af"}}>Email</th>
-          <th style={{backgroundColor:"#68c4af"}}>Telefono</th>
-          <th style={{backgroundColor:"#68c4af"}}>Comentario</th>
-          <th style={{backgroundColor:"#68c4af"}}>Opciones</th>
+    return (
+<Table responsive="sm" striped="columns">
+    <thead>
+        <tr>
+            <th style={{ backgroundColor: "#5b5b5b" }} className='pruebaWe'>#</th>
+            <th style={{ backgroundColor: "#68c4af" }}>Nombre</th>
+            <th style={{ backgroundColor: "#68c4af" }}>Email</th>
+            <th style={{ backgroundColor: "#68c4af" }}>Telefono</th>
+            <th style={{ backgroundColor: "#68c4af" }}>Comentario</th>
+            <th style={{ backgroundColor: "#68c4af" }}>Opciones</th>
         </tr>
-      </thead>
-      <tbody className='containerTablaUsuarios ' >
+    </thead>
+    <tbody className='containerTablaUsuarios'>
         {comentarios.map((comentario, index) => (
-        <tr key={comentario.id}>
-          <td style={{backgroundColor:"#999999"}} >{index + 1}</td>
-          <td>{comentario.nombre}</td>
-          <td>{comentario.email}</td>
-          <td>{comentario.telefono}</td>  
-          <td>{comentario.mensaje}</td>
-          <button className='tablaUsuariosDeleteBtn' onClick={()=> EliminarContacto(comentario.id)}>Eliminar</button>
-          <button className='tablaUsuariosEditBtn' onClick={()=> abrirModal(comentario)}>Editar</button>
-        </tr>
-        ))}             
-         
-      </tbody>
-       {mostrar &&
-              <> <br /> 
-              {/*/Value se muestra en el input, vinculado al estado que tenga dentro de las llaves*/}
-              {/*Onchange actualiza el estado cada vez que cambia el valor del input*/}
-              <input type="text" value={editNombre} className='inputTablaUsuarios' onChange={(e) => setEditNombre(e.target.value)} placeholder='Editar Nombre' />
-              <br />
-              <input type="text" value={editEmail}  className='inputTablaUsuarios' onChange={(e) => setEditEMail(e.target.value)} placeholder='Editar Email' />
-              <br />
-              <input type="text" value={editTelefono}  className='inputTablaUsuarios' onChange={(e) => setEditTelefono(e.target.value)} placeholder='Editar Telefono' />
-              <br />
-              <input type="text" value={editComentario}  className='inputTablaUsuarios' onChange={(e) => setEditComentario(e.target.value)} placeholder='Editar Mensaje' />
-              <br />
-              <button className='tablaUsuariosConfirmBtn' onClick={() => actualizarComentarios(usuario.id)}>Confirmar Edit</button>
-              </>
-          }
-       
-    </Table>
-)
+            <React.Fragment key={comentario.id}>
+                {/* FILA DE DATOS PRINCIPAL */}
+                <tr>
+                    <td style={{ backgroundColor: "#999999" }}>{index + 1}</td>
+                    <td>{comentario.nombre}</td>
+                    <td>{comentario.email}</td>
+                    <td>{comentario.telefono}</td>
+                    <td>{comentario.mensaje}</td>
+                    <td>
+                        <button className='tablaUsuariosDeleteBtn' onClick={() => EliminarContacto(comentario.id)}>
+                            Eliminar
+                        </button>
+                        <button className='tablaUsuariosEditBtn' onClick={() => abrirModal(comentario)}>
+                            Editar
+                        </button>
+                    </td>
+                </tr>
+
+                {/* EDICIÓN: Aparece si "mostrar" es true y el ID coincide  doble cumplimiento*/}
+                {mostrar && usuario?.id === comentario.id && (
+                    <tr style={{ backgroundColor: '#f0f0f0' }}>
+                        <td colSpan="6">
+                            <div >
+                                <input type="text" value={editNombre} className='inputTablaUsuarios' onChange={(e) => setEditNombre(e.target.value)} placeholder='Editar Nombre' />
+                                <input type="text" value={editEmail} className='inputTablaUsuarios' onChange={(e) => setEditEMail(e.target.value)} placeholder='Editar Email' />
+                                <input type="text" value={editTelefono} className='inputTablaUsuarios' onChange={(e) => setEditTelefono(e.target.value)} placeholder='Editar Telefono' />
+                                <input type="text" value={editComentario} className='inputTablaUsuarios' onChange={(e) => setEditComentario(e.target.value)} placeholder='Editar Mensaje' />
+                                
+                                <div>
+                                    <button className='tablaUsuariosConfirmBtn' onClick={() => actualizarComentarios(comentario.id)}>
+                                        Guardar Cambios
+                                    </button>
+                                    <button className='tablaUsuariosDeleteBtn' onClick={() => setMostrar(false)}>
+                                        Cancelar
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                )}
+            </React.Fragment>
+        ))}
+    </tbody>
+</Table>
+    );
 }
 
-export default TablaComentariosCom
+export default TablaComentariosCom;
