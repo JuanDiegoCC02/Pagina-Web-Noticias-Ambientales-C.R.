@@ -7,110 +7,110 @@ Web Site Noticias Ambientales C.R.
 
 -->Architecture:
 - Front-End:
- React
- React Router
- ApexCharts (data visualization)
- Leaflet (geolocation)
- Native Fetch API (API consumption)
- LocalStorage and Cookies (session storage)
+ -React
+ -React Router
+ -ApexCharts (data visualization)
+ -Leaflet (geolocation)
+ -Native Fetch API (API consumption)
+ -LocalStorage and Cookies (session storage)
 
 - Back-End:
- Python
- Django
- Django REST Framework
- MySQL (relational database)
- Simple JWT (authentication)
- Django administration
- Cloudinary (image storage)
+ -Python
+ -Django
+ -Django REST Framework
+ -MySQL (relational database)
+ -Simple JWT (authentication)
+ -Django admin
+ -Cloudinary (image storage)
 <HR>
 
 -->Features:
 - Publishing System:
- Creation of news articles or environmental campaigns
- Publication types (News/Campaign)
- Status tracking (Published, Rejected, Pending)
- Image upload integration (Cloudinary)
- Geolocation via Leaflet with latitude and longitude coordinates
- Automatic moderation workflow in reports
+ -Creation of news articles or environmental campaigns
+ -Publication types (News/Campaign)
+ -Status tracking (Published, Rejected, Pending)
+ -Image upload integration (Cloudinary)
+ -Geolocation via Leaflet with latitude and longitude coordinates
+ -Automatic moderation workflow in reports
 
 - Interaction System:
- Nested comments and replies
- Publication rating system
- Reporting mechanism
+ -Nested comments and replies
+ -Publication rating system
+ -Reporting mechanism
 
 - Administration Panel:
- User management table (CRUD)
- Publication management panel
- Contact form management
- Data visualization with ApexCharts:
- Comparison of news articles and campaigns
- Analysis of user growth
+ -User management table (CRUD)
+ -Publication management panel
+ -Contact form management
+ -Data visualization with ApexCharts:
+ -Comparison of news articles and campaigns
+ -Analysis of user growth
 
 - Authentication and Roles:
-  Authentication is managed using JWTs (access and update tokens) via Simple JWT, ensuring secure and private user sessions.
+ -Authentication is managed using JWTs (access and refresh tokens) via Simple JWT, ensuring secure and private user sessions.
 
 - User Role
- Register and log in securely
- Create news or environmental campaigns
- Upload images via Cloudinary
- Select geolocation using Leaflet (latitude/longitude)
- Comment on and reply to posts
- Rate posts
- Report inappropriate content
- Edit personal profile information
+ -Register and log in securely
+ -Create news or environmental campaigns
+ -Upload images via Cloudinary
+ -Select geolocation using Leaflet (latitude/longitude)
+ -Comment on and reply to posts
+ -Rate posts
+ -Report inappropriate content
+ -Edit personal profile information
 
 - Administrator Role
- Full CRUD permissions over users and posts
- Control over post status
- Access to the moderation panel
- Access to the analytics panel
- Access to the contact panel
+ -Full CRUD permissions over users and posts
+ -Control over post status
+ -Access to the moderation panel
+ -Access to the analytics panel
+ -Access to the contact panel
 <HR>
 
 -->Technologies:
-- Lenguages:
-Python
-JavaScript 
-HTML5
-CSS3
+- Languages:
+ -Python
+ -JavaScript 
+ -HTML5
+ -CSS3
 
 - Framework & Libraries:
-Frontend:
-React
-React Router
-Leaflet 
-ApexCharts 
+ -Frontend:
+ -React
+ -React Router
+ -Leaflet 
+ -ApexCharts 
 
-Backend:
-Django
-Django REST Framework
-Simple JWT 
+ -Backend:
+ -Django
+ -Django REST Framework
+ -Simple JWT 
 
 - Database & Storage:
-MySQL
-Cloudinary 
+ -MySQL
+ -Cloudinary 
 
 - Development Tools:
-VS Code
-Git
-Django Admin
+ -VS Code
+ -Git
+ -Django Admin
   
 - Design & Collaboration:
-Figma
-Trello
-Slack
+ -Figma
+ -Trello
+ -Slack
 <HR>
 
 -->Technical Highlights:
-RESTful API design with Django REST Framework.
-Secure authentication flow based on JWT.
-Role-based access control system.
-Automated moderation of reporting logic.
-Relational database modeling (MySQL).
-Asynchronous data management using the Fetch API.
-Geolocation implementation with Leaflet.
-Image management with Cloudinary.
-Responsive user interface (UI) architecture.
+ -RESTful API design with Django REST Framework.
+ -Secure authentication flow based on JWT.
+ -Role-based access control system.
+ -Automated moderation of reporting logic.
+ -Relational database modeling (MySQL).
+ -Asynchronous data management using the Fetch API.
+ -Geolocation implementation with Leaflet.
+ -Image management with Cloudinary.
+ -Responsive user interface (UI) architecture.
 <HR>
 
 -->Installation Front-End:
@@ -122,6 +122,6 @@ Responsive user interface (UI) architecture.
 <HR>
 
 -->Credits: 
-Final Back-End Project
-Title: Noticias Ambientales C.R.
-Authores: Joseph Monge y Juan Diego C.C.
+ -Final Back-End Project
+ -Title: Noticias Ambientales C.R.
+ -Authores: Joseph Monge y Juan Diego C.C.
