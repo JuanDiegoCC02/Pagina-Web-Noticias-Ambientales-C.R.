@@ -114,10 +114,23 @@ Web Site Noticias Ambientales C.R.
 <HR>
 
 -->Installation Front-End:
+- git clone https://github.com/JuanDiegoCC02/Pagina-Web-Noticias-Ambientales-C.R..git
+- cd Pagina-Web-Noticias-Ambientales-C.R.
+- cd ProyectoFinal_FrontEnd
+- npm install
+- npm run dev
 
 
 -->Installation Back-End:
-
+- cd ProyectoFinal_BackEnd
+- pip install pipenv
+- pipenv install
+- pipenv install django djangorestframework djangorestframework-simplejwt mysqlclient cloudinary python-dotenv django-cors-headers
+- pipenv shell
+- CREATE DATABASE noticias_ambientales;
+- python manage.py makemigrations
+- python manage.py migrate
+- python manage.py runserver
 
 <HR>
 
