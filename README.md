@@ -1,8 +1,8 @@
 Web Site Noticias Ambientales C.R.
 
 -->Description:
- Noticias Ambientales C.R. is a website developed primarily with React on the front end and Django/Django REST Framework on the back end. The website aims to promote environmental awareness and citizen participation in Costa Rica. The application allows users not only to stay informed about ecological events and environmental campaigns but also to actively contribute by publishing news, reporting incidents, and participating in comments.
- The platform combines secure authentication, role-based access control, geolocation and image storage features, content moderation, and graphical data visualization to offer a structured and scalable system for environmental information management.
+- Noticias Ambientales C.R. is a website developed primarily with React on the front end and Django/Django REST Framework on the back end. The website aims to promote environmental awareness and citizen participation in Costa Rica. The application allows users not only to stay informed about ecological events and environmental campaigns but also to actively contribute by publishing news, reporting incidents, and participating in comments.
+- The platform combines secure authentication, role-based access control, geolocation and image storage features, content moderation, and graphical data visualization to offer a structured and scalable system for environmental information management.
 <HR>
 
 -->Architecture:
@@ -102,15 +102,15 @@ Web Site Noticias Ambientales C.R.
 <HR>
 
 -->Technical Highlights:
- -RESTful API design with Django REST Framework.
- -Secure authentication flow based on JWT.
- -Role-based access control system.
- -Automated moderation of reporting logic.
- -Relational database modeling (MySQL).
- -Asynchronous data management using the Fetch API.
- -Geolocation implementation with Leaflet.
- -Image management with Cloudinary.
- -Responsive user interface (UI) architecture.
+ - RESTful API design with Django REST Framework.
+ - Secure authentication flow based on JWT.
+ - Role-based access control system.
+ - Automated moderation of reporting logic.
+ - Relational database modeling (MySQL).
+ - Asynchronous data management using the Fetch API.
+ - Geolocation implementation with Leaflet.
+ - Image management with Cloudinary.
+ - Responsive user interface (UI) architecture.
 <HR>
 
 -->Installation Front-End:
@@ -135,6 +135,6 @@ Web Site Noticias Ambientales C.R.
 <HR>
 
 -->Credits: 
- -Final Back-End Project
- -Title: Noticias Ambientales C.R.
- -Authores: Joseph Monge y Juan Diego C.C.
+- Final Back-End Project
+- Title: Noticias Ambientales C.R.
+- Authores: Joseph Monge y Juan Diego C.C.
