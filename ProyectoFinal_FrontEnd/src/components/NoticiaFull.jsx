@@ -205,206 +205,213 @@
       setComentarioEditando(comentarioId);
     }
     // REPORTES PATCH
-    async function AggReporte() {
-      console.log(reportes[0].reporte++);
-      const reportePublicacion = {
-        "reporte": reportes[0].reporte+=1-1, // Se hizo el +=1-1 debido a que con +1 se agregan de 2 en 2 reportes
-        "publicacion": localStorage.getItem("id_publicacion"),
-        "usuario": localStorage.getItem("id")
-      }
-      const act = await patchData(reportePublicacion, "api/publicaciones",localStorage.getItem("id_publicacion"))
-      console.log(reportePublicacion);
-      console.log(act);
-      // All llegar a 20 reportes 
-      // el estado de la publicacion cambie a pendiente
-      if (reportes[0].reporte >= 20) {
-        console.log("llegó");
-        const cambiarEstado = await patchData({"estado_publicacion":"pendiente"},"api/publicaciones",localStorage.getItem("id_publicacion"))
-        console.log(cambiarEstado);
-      }
-      setReload(prev => !prev)
-    }
+   async function AggReporte() {
+    const reporteActual = reportes[0].reporte;
+    const nuevoReporte = reporteActual + 1;
+
+    const reportePublicacion = {
+      "reporte": nuevoReporte,
+      "publicacion": localStorage.getItem("id_publicacion"),
+      "usuario": localStorage.getItem("id")
+    };
+
+    await patchData(
+      reportePublicacion,
+      "api/publicaciones",
+      localStorage.getItem("id_publicacion")
+    );
+
+  //  auto changed state
+  if (nuevoReporte >= 10) {   
+    await patchData(
+      { estado_publicacion: "pendiente" },
+      "api/publicaciones",
+      localStorage.getItem("id_publicacion")
+    );
+  }
+  setReload(prev => !prev);
+}
     
     return (
-      <div className='noticiasContainer'>
-        <div className='noticiasCard'>
-          <div className='noticiasCardContent'>
-            {Array.isArray(publicaciones) && publicaciones.map((p) => ( // Card que trae y contiene las publicaciones
-              <div key={p.id} className='noticiasItem'>
-                <p className='tipoPublicacion'>{p.nombre_tipo_publicacion}</p>
-                <h1 className='tituloPublicacion'>{p.titulo}</h1>
-                <h2 className='descripPublicacion'>{p.descripcion}</h2>
-                <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={300} />
-                <label htmlFor="" className='ubicacionLb'>Ubicación</label>
-                <div className='containerGeolocalizacion'>
-                 <MapaCards latitud={p.latitud} longitud={p.longitud} />
-                </div>
-             
-                <div>
-                <React.StrictMode>
-                  <CalificacionStarReact />
-                </React.StrictMode>
-                </div><br />
-                
-                <h2 className='tituloReporteNoticia'>Haz Click para reportar la Noticia</h2>
-                <button onClick={AggReporte} className='btnReportes'>Reportar</button>
-                <p className='countReportes'>Número de Reportes: {cantReportes}</p>
-                
-                <h2 className='tituloComentarios'>Comentarios</h2>
-                <div>
-                  <input className='inputComentarioNoticia' type="text" value={comentariosPublicaciones}
-                    onChange={(e) => setComentariosPublicaciones(e.target.value)} placeholder='Agregar comentario' />
-                      {errores.contenido && <p className='error-message-I'>{errores.contenido[0]}</p>}
-                  <br />
-                  <button className='btnComentarioNoticiasFull' onClick={AggComentario}>Enviar Comentario</button>
-                </div>
+<div className='noticiasContainer'>
+<div className='noticiasCard'>
+  <div className='noticiasCardContent'>
+    {Array.isArray(publicaciones) && publicaciones.map((p) => ( // Card que trae y contiene las publicaciones
+      <div key={p.id} className='noticiasItem'>
+        <p className='tipoPublicacion'>{p.nombre_tipo_publicacion}</p>
+        <h1 className='tituloPublicacion'>{p.titulo}</h1>
+        <h2 className='descripPublicacion'>{p.descripcion}</h2>
+        <img src={p.img} alt="Imagen de la noticia" className='noticiasIMG' width={300} />
+        <label htmlFor="" className='ubicacionLb'>Ubicación</label>
+        <div className='containerGeolocalizacion'>
+          <MapaCards latitud={p.latitud} longitud={p.longitud} />
+        </div>
+      
+        <div>
+        <React.StrictMode>
+          <CalificacionStarReact />
+        </React.StrictMode>
+        </div><br />
+        
+        <h2 className='tituloReporteNoticia'>Haz Click para reportar la Noticia</h2>
+        <button onClick={AggReporte} className='btnReportes'>Reportar</button>
+        <p className='countReportes'>Número de Reportes: {cantReportes}</p>
+        
+        <h2 className='tituloComentarios'>Comentarios</h2>
+        <div>
+        <input className='inputComentarioNoticia' type="text" value={comentariosPublicaciones}
+          onChange={(e) => setComentariosPublicaciones(e.target.value)} placeholder='Agregar comentario' />
+            {errores.contenido && <p className='error-message-I'>{errores.contenido[0]}</p>}
+        <br />
+        <button className='btnComentarioNoticiasFull' onClick={AggComentario}>Enviar Comentario</button>
+        </div>
 
-                <div className="comentariosContainer">
-                  {comentarios.map((comentario) => (
-                    <div key={comentario.id} className="comentarioCard">
-                      <div className="comentarioUsuario">{`Usuario #${comentario.usuario}`}</div>
-                      <div className="comentarioContenido">{comentario.contenido}</div>
+        <div className="comentariosContainer">
+          {comentarios.map((comentario) => (
+            <div key={comentario.id} className="comentarioCard">
+              <div className="comentarioUsuario">{`Usuario #${comentario.usuario}`}</div>
+              <div className="comentarioContenido">{comentario.contenido}</div>
 
-                      {/*Para que el boton de Eliminar solo se muestre al usuario que realizó el comentario*/}
-                      {localStorage.getItem("id") == comentario.usuario && (
-                        <Button href='#eliminacion' className='noticiasFullBtnEliminar' onClick={() =>{
-                          setAlertaEliminar(true)
-                          setIdEliminarComentario(comentario.id)
-                        }}>Eliminar</Button>
-                      )}
-                      
-                      {/*Para que el boton de editar solo se muestre al usuario que realizó el comentario*/}
-                      {localStorage.getItem("id") == comentario.usuario && (
-                        <button className='noticiasFullBtnEdit' onClick={() => abrirModal(comentario)}>Editar</button>
-                      )}
-                      {comentarioEditandoId === comentario.id && (
-                        <>
-                          {/* Input para editar el comentario */} 
-                          <input
-                            className='noticiasInputComentariosBtn'
-                            type="text"
-                            value={editComentario} // Valor actual del comentario en edición
-                            onChange={(e) => setEditComentario(e.target.value)} // Actualiza el estado conforme escribes
-                          />
-                          {/* Botón para guardar el comentario editado */}
-                          <button
-                            className='noticiasFullGuardarComentariosBtn'
-                            onClick={() => actualizarComentarios(comentario.id)} // Llama a la función que actualiza el comentario en backend
-                          >Guardar</button>
-                          <button className='noticiasFullBtnCancelarEdit' onClick={() => setComentarioEditandoId()}>Cancelar</button>
-                        </>
-                      )}
-                      <button
-                        className='noticiasFullBtnRespuesta'
-                        onClick={() => {
-                          if (comentarioActivo === comentario.id) {
-                            setComentarioActivo(null)
-                          } else {
-                            setComentarioActivo(comentario.id)
-                            TraerRespuestas(comentario.id)
-                          }
-                        }}
-                      >
-                        Ver respuestas
-                      </button>
-                      {comentarioActivo === comentario.id && (
-                        <div className="respuestasContainer">
-                          <div>
-                            <h6 className='tituloRespuesta'>Respuestas</h6>
-                            {respuestas[comentario.id] && respuestas[comentario.id].length > 0 ? (
-                              respuestas[comentario.id].map(respuesta => (
-                                <div key={respuesta.id} className="respuestaCard">
-                                  {respuestaEditando === respuesta.id ? (
-                                    <>
-                                      <input
-                                        className='inputRespuestaEditNoticias'
-                                        type="text"
-                                        value={editRespuesta}
-                                        onChange={(e) => setEditRespuesta(e.target.value)}
-                                      />
-                                      <button
-                                        className='btnRespuestaConfirmarEdit'
-                                        onClick={() => actualizarRespuestas(respuesta.id)}
-                                      >
-                                        Guardar
-                                      </button>
-                                      <button
-                                        className='btnRespuestaCancelarEdit'
-                                        onClick={() => setRespuestaEditando(null)}
-                                      >
-                                        Cancelar
-                                      </button>
-                                    </>
-                                  ) : (
-                                    <>
-                                      {respuesta.contenido}
-                                      <br />
-                                      {/*Para solo mostrar el boton de eliminar en sus propios comentarios al usuario*/}
-                                      {localStorage.getItem("id") == respuesta.usuario && (
-                                        <>
-                                          <button
-                                            className='btnRespuestaEliminar'
-                                            onClick={() => {
-                                              setAlertaEliminarRespuesta(true);
-                                              setRespuestaAEliminar(respuesta.id);
-                                              setComentarioAsociado(comentario.id);
-                                            }}
-                                          >
-                                            Eliminar
-                                          </button>
-                                          <button
-                                            className='btnRespuestaEditar'
-                                            onClick={() => abrirModalRespuestas(respuesta, comentario.id)}
-                                          >
-                                            Editar
-                                          </button>
-                                        </>
-                                      )}
-                                    </>
-                                  )}
-                                </div>
-                              ))
-                            ) : (
-                              <div>No hay respuestas.</div>
-                            )}
-                          </div>
-                          <input className='inputRespuestaNoticias'
-                            type="text"
-                            placeholder='Responder Comentario'
-                            value={textoRespuesta[comentario.id] || ""}
-                            onChange={e => setTextoRespuesta(prev => ({ ...prev, [comentario.id]: e.target.value }))}
-                          />
-                          {erroresRespuestas[comentario.id] && <p className='error-message-I'>{erroresRespuestas[comentario.id]}</p>}
-
-                          <button className='btnRespuestaNoticias' onClick={() => AgregarRespuesta(comentario.id)}>Enviar Respuesta</button>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        {alertaEliminar &&
-        <div className='alertaEliminarCont' id='eliminacion'>
-          <AlertaEliminar confirmarEliminar={()=>EliminarComentario(idEliminarComentario)}
-          denegarEliminar={()=>setAlertaEliminar(false)}
-          />
-          </div>
-                        }
-          {alertaEliminarRespuesta && (
-          <div className="alertaEliminarCont" id="eliminacion-respuesta">
-            <AlertaEliminarRespuesta confirmarEliminar={() => {
-                eliminarRespuesta(respuestaAEliminar, comentarioAsociado);
-                setAlertaEliminarRespuesta(false);
-              }}
-              denegarEliminar={() => setAlertaEliminarRespuesta(false)}
-            />
-          </div>
-
+              {/*Para que el boton de Eliminar solo se muestre al usuario que realizó el comentario*/}
+              {localStorage.getItem("id") == comentario.usuario && (
+                <Button href='#eliminacion' className='noticiasFullBtnEliminar' onClick={() =>{
+                  setAlertaEliminar(true)
+                  setIdEliminarComentario(comentario.id)
+                }}>Eliminar</Button>
+              )}
+              
+              {/*Para que el boton de editar solo se muestre al usuario que realizó el comentario*/}
+              {localStorage.getItem("id") == comentario.usuario && (
+                <button className='noticiasFullBtnEdit' onClick={() => abrirModal(comentario)}>Editar</button>
+              )}
+              {comentarioEditandoId === comentario.id && (
+              <>
+                {/* Input para editar el comentario */} 
+                <input
+                  className='noticiasInputComentariosBtn'
+                  type="text"
+                  value={editComentario} // Valor actual del comentario en edición
+                  onChange={(e) => setEditComentario(e.target.value)} // Actualiza el estado conforme escribes
+                />
+                  {/* Botón para guardar el comentario editado */}
+            <button
+              className='noticiasFullGuardarComentariosBtn'
+              onClick={() => actualizarComentarios(comentario.id)} // Llama a la función que actualiza el comentario en backend
+            >Guardar</button>
+            <button className='noticiasFullBtnCancelarEdit' onClick={() => setComentarioEditandoId()}>Cancelar</button>
+          </>
         )}
+        <button
+          className='noticiasFullBtnRespuesta'
+          onClick={() => {
+            if (comentarioActivo === comentario.id) {
+              setComentarioActivo(null)
+            } else {
+              setComentarioActivo(comentario.id)
+              TraerRespuestas(comentario.id)
+            }
+          }}
+        >
+          Ver respuestas
+        </button>
+        {comentarioActivo === comentario.id && (
+          <div className="respuestasContainer">
+            <div>
+              <h6 className='tituloRespuesta'>Respuestas</h6>
+              {respuestas[comentario.id] && respuestas[comentario.id].length > 0 ? (
+                respuestas[comentario.id].map(respuesta => (
+                  <div key={respuesta.id} className="respuestaCard">
+                    {respuestaEditando === respuesta.id ? (
+                  <>
+                    <input
+                      className='inputRespuestaEditNoticias'
+                      type="text"
+                      value={editRespuesta}
+                      onChange={(e) => setEditRespuesta(e.target.value)}
+                    />
+                    <button
+                      className='btnRespuestaConfirmarEdit'
+                      onClick={() => actualizarRespuestas(respuesta.id)}
+                    >
+                      Guardar
+                    </button>
+                    <button
+                      className='btnRespuestaCancelarEdit'
+                      onClick={() => setRespuestaEditando(null)}
+                    >
+                      Cancelar
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    {respuesta.contenido}
+                    <br />
+                    {/*Para solo mostrar el boton de eliminar en sus propios comentarios al usuario*/}
+                    {localStorage.getItem("id") == respuesta.usuario && (
+                      <>
+                        <button
+                          className='btnRespuestaEliminar'
+                          onClick={() => {
+                            setAlertaEliminarRespuesta(true);
+                            setRespuestaAEliminar(respuesta.id);
+                            setComentarioAsociado(comentario.id);
+                          }}
+                        >
+                          Eliminar
+                        </button>
+                        <button
+                          className='btnRespuestaEditar'
+                          onClick={() => abrirModalRespuestas(respuesta, comentario.id)}
+                        >
+                          Editar
+                        </button>
+                      </>
+                    )}
+                  </>
+                    )}
+                  </div>
+                ))
+              ) : (
+                <div>No hay respuestas.</div>
+              )}
+            </div>
+            <input className='inputRespuestaNoticias'
+              type="text"
+              placeholder='Responder Comentario'
+              value={textoRespuesta[comentario.id] || ""}
+              onChange={e => setTextoRespuesta(prev => ({ ...prev, [comentario.id]: e.target.value }))}
+            />
+            {erroresRespuestas[comentario.id] && <p className='error-message-I'>{erroresRespuestas[comentario.id]}</p>}
+
+            <button className='btnRespuestaNoticias' onClick={() => AgregarRespuesta(comentario.id)}>Enviar Respuesta</button>
           </div>
+        )}
       </div>
+    ))}
+  </div>
+</div>
+  ))}
+</div>
+{alertaEliminar &&
+<div className='alertaEliminarCont' id='eliminacion'>
+  <AlertaEliminar confirmarEliminar={()=>EliminarComentario(idEliminarComentario)}
+  denegarEliminar={()=>setAlertaEliminar(false)}
+  />
+  </div>
+                }
+  {alertaEliminarRespuesta && (
+  <div className="alertaEliminarCont" id="eliminacion-respuesta">
+    <AlertaEliminarRespuesta confirmarEliminar={() => {
+        eliminarRespuesta(respuestaAEliminar, comentarioAsociado);
+        setAlertaEliminarRespuesta(false);
+      }}
+      denegarEliminar={() => setAlertaEliminarRespuesta(false)}
+    />
+  </div>
+
+)}
+  </div>
+</div>
     )
   }
 
