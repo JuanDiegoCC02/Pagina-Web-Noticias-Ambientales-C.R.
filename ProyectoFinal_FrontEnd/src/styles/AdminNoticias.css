@@ -12,6 +12,7 @@
   gap: 2rem;
 }
 
+
 /* card noticia */
 
 .news-card {
@@ -29,8 +30,8 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-/* header */
 
+/* header */
 
 .news-card__header {
   background-color: #1b4332;
@@ -59,23 +60,22 @@
 }
 
 .news-card__status--pendiente {
-  background-color: #f4a261;
-  color: white;
+  background-color: #fcff44;
+  color: rgb(0, 0, 0);
 }
 
 .news-card__status--rechazada {
-  background-color: #b00020;
-  color: white;
+  background-color: #fa4242;
+  color: rgb(0, 0, 0);
 }
 
 .news-card__status--publicada {
-  background-color: #2d6a4f;
-  color: white;
+  background-color: #00c298;
+  color: rgb(0, 0, 0);
 }
 
 
 /* body */
-
 
 .news-card__body {
   padding: 1.2rem;
@@ -114,8 +114,8 @@
   border: 2px solid #d8f3dc;
 }
 
-/* footer card news */
 
+/* footer card news */
 
 .news-card__footer {
   display: flex;
@@ -126,7 +126,7 @@
 
 /* btn */
 
-.btn {
+.btn, .btn-deleteNews, .btn-editNews , .btn-saveEdit-news, .btn-cancelEdit-news{
   flex: 1;
   padding: 0.6rem;
   border-radius: 8px;
@@ -136,41 +136,42 @@
   transition: 0.3s ease;
 }
 
-.btn--danger {
-  background-color: #b00020;
+.btn-deleteNews {
+  background-color: #b40c2b;
+  color: rgb(255, 255, 255);
+}
+
+.btn-deleteNews:hover {
+  background-color: #f00528;
+}
+
+.btn-editNews {
+  background-color: #5c5c56;
+  color: rgb(255, 255, 255);
+}
+
+.btn-editNews:hover {
+  background-color: #86867a;
+}
+
+.btn-saveEdit-news {
+  background-color: #0d613b;
   color: white;
 }
 
-.btn--danger:hover {
-  background-color: #870014;
+.btn-saveEdit-news:hover {
+  background-color: #27ac70;
 }
 
-.btn--warning {
-  background-color: #f4a261;
-  color: white;
-}
-
-.btn--warning:hover {
-  background-color: #e76f51;
-}
-
-.btn--primary {
-  background-color: #2d6a4f;
-  color: white;
-}
-
-.btn--primary:hover {
-  background-color: #40916c;
-}
-
-.btn--ghost {
-  background-color: transparent;
+.btn-cancelEdit-news {
+  background-color: #17463a;
   border: 2px solid #2d6a4f;
-  color: #2d6a4f;
+  color: #ffffff;
 }
 
-.btn--ghost:hover {
-  background-color: #2d6a4f;
+.btn-cancelEdit-news:hover {
+  background-color: #4c7e73;
+  border: 2px solid #4c7e73;
   color: white;
 }
 

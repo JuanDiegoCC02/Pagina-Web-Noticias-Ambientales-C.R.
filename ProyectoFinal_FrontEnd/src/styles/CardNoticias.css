@@ -1,82 +1,116 @@
+/* card All */
 .card-noticia {
-    background-color: #067e60; 
-    border-radius: 6px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+    background-color: #067e60;
+    border-radius: 10px;
+    border: 3px solid #002418;
     overflow: hidden;
-    border: 4px solid #000000; 
-    box-shadow: inset 0 0 10px rgb(0, 31, 14);
     margin-bottom: 35px;
-    padding: 5px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: 0 8px 20px rgba(0, 31, 14, 0.6);
+    transition: all 0.3s ease;
 }
 
 .card-noticia:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 5px 25px rgb(0, 255, 119);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 255, 119, 0.25);
     border-color: #004e48;
 }
 
+
+/* img card news */
 .card-noticia-img {
-    height: 200px; 
+    height: 210px;
     object-fit: cover;
     width: 100%;
-    border-bottom: 3px solid #002418;
+    border-bottom: 4px solid #002418;
 }
 
+
+/* body card news */
 .card-body {
-    padding: 15px; 
+    padding: 18px;
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* News title */
+.card-noticia-title {
+    padding: 5px 7px;
+    background-color: rgb(182, 255, 231);
+    border: 2px solid #40ffc6;
+    border-radius: 6px;
+    font-size: 1.0rem;
+    font-weight: 700;
+    color: #00503f;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 12px;
+}
+
+/* News text  */ 
+.card-noticia-text {
+    font-size: 0.95rem;
+    color: #99ffee;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+/* btn ver más*/
+.btn-show-noticia {
+    color: rgb(0, 0, 0); 
+    border: 2px solid rgb(0, 22, 17);
+    background-color: #82f5d2;
+    font-weight: 700;
+    padding: 8px 0;
+    width: 70%;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    align-self: center;
     text-align: center;
 }
 
-.card-noticia-title {
-    padding: 10px;
-    background-color: rgb(115, 255, 208);
-    box-shadow: inset 0 0 10px rgb(0, 31, 14);
-    border: 1px solid rgb(0, 0, 0);
-    border-radius: 3px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #00503f; 
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-    text-shadow: 
-    /* Primera sombra: Clara, para un efecto de relieve sutil */
-    1px 1px 3px rgba(22, 255, 158, 0.808), 
-    /* Segunda sombra: Oscura, para mayor definición y profundidad */
-    2px 2px 5px rgb(0, 41, 34);
+.btn-show-noticia:hover {
+  background-color: #003d27c6;
+  border: 2px groove rgb(150, 250, 220);
+  color: #c2ffe1;
+  box-shadow:  0 4px 12px rgb(165, 226, 204);
+  transform: translateY(-2px);
 }
 
-
-
-.card-noticia-text {
-    font-size: 0.97rem;
-    color: #05ffd5; 
-    margin-bottom: 1rem;
-    text-align:  justify;
+.btn-show-noticia:active {
+    transform: scale(0.96);
 }
 
-/* BOTÓN (Mismo estilo que el botón de envío) */
-.card-noticia .btn-primary {
-    background-color: #38a169;
-    border: none;
-    color: #1a202c; /* Texto oscuro para alto contraste */
-    font-weight: 700;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    align-self: center; /* Si el .card-body es flexbox (Solución 1a) */
-    margin-left: 0;
-    margin-right: 0;
-    
-}
+/* responsive */
+@media (max-width: 768px) {
+    .card-noticia {
+        border-radius: 8px;
+    }
 
-.card-noticia .btn-primary:hover {
-    background-color: #48bb78;
-    color: white;
-    /* GLOW sutil en el botón */
-    box-shadow: 0 0 10px #38a169;
+    .card-noticia-img {
+        height: 180px;
+    }
+
+    .card-noticia-title {
+        font-size: 1rem;
+    }
+
+    .card-noticia-text {
+        font-size: 0.9rem;
+    }
+
+    .btn-show-noticia {
+        width: 85%;
+    }
 }

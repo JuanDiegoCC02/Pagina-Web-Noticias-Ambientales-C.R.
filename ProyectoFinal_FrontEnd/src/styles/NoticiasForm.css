@@ -21,12 +21,12 @@
     box-shadow: 0 0 20px rgb(0, 201, 151); /* Sombra exterior para efecto GLOW */
 }
 
-/* TÍTULO */
+/* title */
 .tituloNoticia {
     font-size: 2em;
     font-weight: 700;
     margin-bottom: 35px;
-    color: #001f14;
+    color: #000000;
     text-align: left;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -40,7 +40,7 @@
 }
 
 
-/* CONTENEDOR FORM */
+/* card form */
 .containerNoticia {
     display: flex;
     flex-direction: column;
@@ -48,7 +48,7 @@
     width: 100%;
 }
 
-/* INPUTS y SELECT */
+/* INPUTS & SELECT */
 .inputTexto::placeholder{
     color: rgb(58, 58, 58);
 }
@@ -59,7 +59,7 @@
     border-radius: 4px; 
     border: 1px solid #0d271c; 
     font-size: 16px;
-    background-color: #56f0b0; 
+    background-color: #97ffd4; 
     color: rgb(0, 46, 31);
     transition: all 0.3s ease;
 }
@@ -71,7 +71,7 @@
     box-shadow: 0 0 5px #00ffaad5, 0 0 10px #1effa1ef; 
 }
 
-/* BOTÓN DE ENVÍO */
+/* btn post news */
 .noticiasBtn {
     margin-top: 25px;
     color: rgb(0, 0, 0); 
@@ -91,10 +91,11 @@
 }
 
 .noticiasBtn:hover {
-    background-color: #003d27c6;
+  background-color: #003d27c6;
   border: 2px groove rgb(150, 250, 220);
-  color: #84fabf;
+  color: #c2ffe1;
   box-shadow:  0 4px 12px rgb(165, 226, 204);
+  transform: translateY(-2px);
 }
 
 

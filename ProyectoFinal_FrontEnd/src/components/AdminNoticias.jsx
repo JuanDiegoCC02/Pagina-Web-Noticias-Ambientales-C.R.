@@ -155,7 +155,7 @@ async function cambiarEstado(id, estadoActual) {
         {/* footer admin news */}
         <footer className="news-card__footer">
           <button
-            className="btn btn--danger"
+            className=" btn-deleteNews"
             onClick={() => {
               setAlertaEliminar(true)
               setIdEliminarPublicacion(p.id)
@@ -165,7 +165,7 @@ async function cambiarEstado(id, estadoActual) {
           </button>
 
           <button
-            className="btn btn--warning"
+            className="btn-editNews"
             onClick={() => abrirModalPublicaciones(p)}
           >
             Editar
@@ -227,14 +227,14 @@ async function cambiarEstado(id, estadoActual) {
 
         <div className="modal__actions">
           <button
-            className="btn btn--primary"
+            className="btn-saveEdit-news"
             onClick={() => ActualizarPublicaciones(usuario.id)}
           >
             Guardar Cambios
           </button>
 
           <button
-            className="btn btn--ghost"
+            className="btn-cancelEdit-news"
             onClick={() => setMostrar(false)}
           >
             Cancelar
