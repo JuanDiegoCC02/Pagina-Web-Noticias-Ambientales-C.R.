@@ -53,7 +53,7 @@ REST_FRAMEWORK = {
     # )
 }
 
-#Implementacion de JWT
+#Implementacion de seguridad JWT 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=120),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
@@ -141,7 +141,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
 
-#Metodos 
+# METHODS
 CORS_ALLOW_METHODS = [
     'GET',
     'POST',

@@ -1,6 +1,6 @@
-// Llamados Usuarios
 
-// Prueba Post para validar usuario y calificacion
+
+// test Post para validar user & calification
 async function GetCalificacionPorUsuarioYPublicacion(usuarioId, publicacionId) {
     const accessToken = localStorage.getItem("accessToken");
     try {
@@ -26,13 +26,10 @@ async function GetCalificacionPorUsuarioYPublicacion(usuarioId, publicacionId) {
 
 
 
+// Hooks Users
 
 
-
-
-
-
-
+ // Hooks getUsers
 async function GetUsuarios() {
     const accessToken = localStorage.getItem("accessToken");
   try {
@@ -57,7 +54,7 @@ async function GetUsuarios() {
 
 
 
-// Llamado Post de Usuarios
+// Hooks postUsers
 async function PostUsuarios(obj) {
     try {
         const response = await fetch ("http://127.0.0.1:8000/api/usuarios/",{
@@ -81,7 +78,7 @@ async function PostUsuarios(obj) {
 
 
 
-// Llamado Uptade de Usuarios
+// Hooks updateUsers
 async function UpdateUsuarios(obj, id) {
     const accessToken = localStorage.getItem("accessToken"); 
 
@@ -108,7 +105,7 @@ async function UpdateUsuarios(obj, id) {
 
 
 
-//  Llamado Delete de Usuarios
+//  Hooks deleteUsers
 async function DeleteUsuarios(id) {
      const accessToken = localStorage.getItem("accessToken");
     try {
@@ -134,7 +131,7 @@ async function DeleteUsuarios(id) {
 
 
 
-// Exportacion de los llamados
+// Hooks exports
 export{
     GetUsuarios,
     PostUsuarios,

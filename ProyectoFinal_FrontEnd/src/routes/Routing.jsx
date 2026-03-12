@@ -19,14 +19,14 @@ function Routing() {
   return (
    <Router>
         <Routes>   
-            {/*Rutas Privadas*/}
+            {/*private routes*/}
             <Route path="/admin" element={<PrivateRoutes children={<NoticiasAdmin/>} rol="Administrador"/>}/>
             <Route path="/moderador" element={<PrivateRoutes children={<Moderador/>} rol="Administrador"/>}/>
             <Route path="/tablacomentarios" element={<PrivateRoutes children={<TablaComentarios/>} rol="Administrador"/>}/>
             <Route path="/tablausuarios" element={<PrivateRoutes children={<TablaUsuarios/>} rol="Administrador"/>}/>
             <Route path="/perfil" element={<Perfil/>}/>
 
-            {/*Rutas Publicas*/}
+            {/*public routes*/}
             <Route path="/" element={<Home/>}/>
             <Route path = '/registro' element = {<RegistroPage/>}/> 
             <Route path = '/inicio' element = {<InicioSesionPage/>}/> 

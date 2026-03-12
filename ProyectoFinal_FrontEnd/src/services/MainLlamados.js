@@ -1,5 +1,7 @@
 const token = localStorage.getItem("accessToken");
 
+
+//  HOOKS GET
 async function getUsers(endpoint,id='') {
    //cambio de id
     try {
@@ -24,7 +26,7 @@ async function getUsers(endpoint,id='') {
 }
 
 
-//////////LLAMADO POST//////////
+//////////HOOKS POST//////////
 
 async function postUsers(obj,endpoint) {
     try {
@@ -48,7 +50,7 @@ async function postUsers(obj,endpoint) {
 }
 
 
-//////////////LLAMADO UPDATE/////////////
+//////////////HOOKS UPDATE/////////////
 
 
 async function updateUsers(logInUser, logInPassword, MdUsu) 
@@ -80,7 +82,7 @@ async function updateUsers(logInUser, logInPassword, MdUsu)
 }
 
 
-////////LLAMADO PATCH//////////////
+////////HOOKS PATCH//////////////
 
 async function patchData(estado,endpoint,id) 
 {
@@ -103,7 +105,7 @@ async function patchData(estado,endpoint,id)
 }
 
 
-//////////////LLAMADO DELETE/////////////
+//////////////HOOKS DELETE/////////////
 
 async function deleteUser(id,endpoint) {
     try {
