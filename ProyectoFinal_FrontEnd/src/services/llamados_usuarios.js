@@ -26,10 +26,10 @@ async function GetCalificacionPorUsuarioYPublicacion(usuarioId, publicacionId) {
 
 
 
-// Hooks Users
 
 
- // Hooks getUsers
+
+ // API getUsers
 async function GetUsuarios() {
     const accessToken = localStorage.getItem("accessToken");
   try {
@@ -54,7 +54,7 @@ async function GetUsuarios() {
 
 
 
-// Hooks postUsers
+// API postUsers
 async function PostUsuarios(obj) {
     try {
         const response = await fetch ("http://127.0.0.1:8000/api/usuarios/",{
@@ -78,7 +78,7 @@ async function PostUsuarios(obj) {
 
 
 
-// Hooks updateUsers
+// API updateUsers
 async function UpdateUsuarios(obj, id) {
     const accessToken = localStorage.getItem("accessToken"); 
 
@@ -105,7 +105,7 @@ async function UpdateUsuarios(obj, id) {
 
 
 
-//  Hooks deleteUsers
+//  API deleteUsers
 async function DeleteUsuarios(id) {
      const accessToken = localStorage.getItem("accessToken");
     try {
@@ -131,7 +131,7 @@ async function DeleteUsuarios(id) {
 
 
 
-// Hooks exports
+//  exports API CRUD
 export{
     GetUsuarios,
     PostUsuarios,

@@ -1,7 +1,7 @@
 const token = localStorage.getItem("accessToken");
 
 
-//  HOOKS GET
+//  API GET
 async function getUsers(endpoint,id='') {
    //cambio de id
     try {
@@ -26,8 +26,7 @@ async function getUsers(endpoint,id='') {
 }
 
 
-//////////HOOKS POST//////////
-
+//////////API POST//////////
 async function postUsers(obj,endpoint) {
     try {
         const response = await fetch(`http://127.0.0.1:8000/${endpoint}`, {
@@ -50,9 +49,7 @@ async function postUsers(obj,endpoint) {
 }
 
 
-//////////////HOOKS UPDATE/////////////
-
-
+//////////////API UPDATE/////////////
 async function updateUsers(logInUser, logInPassword, MdUsu) 
 {
     try {
@@ -82,8 +79,7 @@ async function updateUsers(logInUser, logInPassword, MdUsu)
 }
 
 
-////////HOOKS PATCH//////////////
-
+////////API PATCH//////////////
 async function patchData(estado,endpoint,id) 
 {
     try {
@@ -105,8 +101,7 @@ async function patchData(estado,endpoint,id)
 }
 
 
-//////////////HOOKS DELETE/////////////
-
+//////////////API DELETE/////////////
 async function deleteUser(id,endpoint) {
     try {
         const response = await fetch(`http://127.0.0.1:8000/${endpoint}/${id}/`, {
