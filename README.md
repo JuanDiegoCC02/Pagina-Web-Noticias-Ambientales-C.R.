@@ -133,7 +133,7 @@
 
 <HR>
 
--->Credits: 
+# 🧑‍💻 Credits: 
 - Final Back-End Project
 - Title: Noticias Ambientales C.R.
-- Authores: Joseph Monge y Juan Diego C.C.
+- Authores: Joseph Monge y Juan Diego Corella Camacho
