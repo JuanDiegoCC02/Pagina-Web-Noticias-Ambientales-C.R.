@@ -4,7 +4,7 @@
 - The platform combines secure authentication, role-based access control, geolocation and image storage features, content moderation, and graphical data visualization to offer a structured and scalable system for environmental information management.
 <HR>
 
-- ⚙️ Architecture:
+ ⚙️ Architecture:
 - Front-End:
  -React
  -React Router
