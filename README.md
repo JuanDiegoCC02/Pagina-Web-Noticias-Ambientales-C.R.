@@ -80,7 +80,7 @@
  -Leaflet 
  -ApexCharts 
 
- -Backend:
+- Backend:
  -Django
  -Django REST Framework
  -Simple JWT 
