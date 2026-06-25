@@ -1,4 +1,4 @@
-# 🌐 Web Site Noticias Ambientales C.R.
+# 🌐 Noticias Ambientales C.R.
 
 - Noticias Ambientales C.R. is a website developed primarily with React on the front end and Django/Django REST Framework on the back end. The website aims to promote environmental awareness and citizen participation in Costa Rica. The application allows users not only to stay informed about ecological events and environmental campaigns but also to actively contribute by publishing news, reporting incidents, and participating in comments.
 - The platform combines secure authentication, role-based access control, geolocation and image storage features, content moderation, and graphical data visualization to offer a structured and scalable system for environmental information management.
@@ -23,7 +23,7 @@
  -Cloudinary (image storage)
 <HR>
 
--->Features:
+# 🗂️ Features:
 - Publishing System:
  -Creation of news articles or environmental campaigns
  -Publication types (News/Campaign)
