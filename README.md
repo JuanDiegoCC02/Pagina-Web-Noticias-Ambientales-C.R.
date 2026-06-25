@@ -66,7 +66,7 @@
  -Access to the contact panel
 <HR>
 
--->Technologies:
+# 🏗️ Technologies:
 - Languages:
  -Python
  -JavaScript 
