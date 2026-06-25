@@ -112,7 +112,7 @@
  - Responsive user interface (UI) architecture.
 <HR>
 
--->Installation Front-End:
+# 🔧 Installation Front-End:
 - git clone https://github.com/JuanDiegoCC02/Pagina-Web-Noticias-Ambientales-C.R..git
 - cd Pagina-Web-Noticias-Ambientales-C.R.
 - cd ProyectoFinal_FrontEnd
@@ -120,7 +120,7 @@
 - npm run dev
 
 
--->Installation Back-End:
+# 🔧 Installation Back-End:
 - cd ProyectoFinal_BackEnd
 - pip install pipenv
 - pipenv install
