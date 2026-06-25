@@ -100,7 +100,7 @@
  -Slack
 <HR>
 
--->Technical Highlights:
+# 🛠️ Technical Highlights:
  - RESTful API design with Django REST Framework.
  - Secure authentication flow based on JWT.
  - Role-based access control system.
